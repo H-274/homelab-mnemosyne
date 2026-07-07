@@ -18,7 +18,7 @@ services:
       - VPN_AUTO_PORT_FORWARD=true
       # - VPN_PORT_REDIRECTS
       - VPN_HEALTHCHECK_ENABLED=false
-      - VPN_NAMESERVERS=1.1.1.1@853#cloudflare-dns.com
+      - VPN_NAMESERVERS=
       # - VPN_INTERFACE_PREFIXES
       - VPN_PIA_USER
       - VPN_PIA_PASS
@@ -58,7 +58,7 @@ services:
       - VPN_AUTO_PORT_FORWARD=true
       # - VPN_PORT_REDIRECTS
       - VPN_HEALTHCHECK_ENABLED=false
-      - VPN_NAMESERVERS=1.1.1.1@853#cloudflare-dns.com
+      - VPN_NAMESERVERS=
       # - VPN_INTERFACE_PREFIXES
       - VPN_PIA_USER
       - VPN_PIA_PASS
@@ -98,7 +98,7 @@ services:
       - VPN_AUTO_PORT_FORWARD=true
       # - VPN_PORT_REDIRECTS
       - VPN_HEALTHCHECK_ENABLED=false
-      - VPN_NAMESERVERS=1.1.1.1@853#cloudflare-dns.com
+      - VPN_NAMESERVERS=
       # - VPN_INTERFACE_PREFIXES
       - VPN_PIA_USER
       - VPN_PIA_PASS
@@ -139,7 +139,7 @@ services:
       - VPN_AUTO_PORT_FORWARD=true
       # - VPN_PORT_REDIRECTS
       - VPN_HEALTHCHECK_ENABLED=false
-      - VPN_NAMESERVERS=1.1.1.1@853#cloudflare-dns.com
+      - VPN_NAMESERVERS=
       # - VPN_INTERFACE_PREFIXES
       - VPN_PIA_USER
       - VPN_PIA_PASS
