@@ -21,7 +21,7 @@ services:
       # Providers
       - "--providers.docker=true"
       - "--providers.docker.exposedbydefault=false"
-      - "--providers.docker.network=proxy"
+      - "--providers.docker.network=exposed-internal"
 
       # API & Dashboard
       - "--api.dashboard=true"
@@ -41,7 +41,7 @@ services:
       - "traefik.http.routers.dashboard.rule=Host(`dashboard.mnemosyne.lan`)"
       - "traefik.http.routers.dashboard.entrypoints=web"
       - "traefik.http.routers.dashboard.service=api@internal"
-      # - "traefik.http.routers.dashboard.tls=true"
+      - "traefik.http.routers.dashboard.tls=true"
 
       # Basic‑auth middleware
       # - "traefik.http.middlewares.dashboard-auth.basicauth.users=<PASTE_HASH_HERE>"
