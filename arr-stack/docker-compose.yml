@@ -4,8 +4,8 @@ services:
     cap_add:
       - NET_ADMIN
     volumes:
-      - /path/to/config/sonarr:/config
-      - /host/data:/data
+      - /arr-stack/config/sonarr:/config
+      - /arr-stack/data:/data
     networks:
       - exposed-internal
     environment:
@@ -44,8 +44,8 @@ services:
     cap_add:
       - NET_ADMIN
     volumes:
-      - /path/to/config/radarr:/config
-      - /host/data:/data
+      - /arr-stack/config/radarr:/config
+      - /arr-stack/data:/data
     networks:
       - exposed-internal
     environment:
@@ -84,8 +84,8 @@ services:
     cap_add:
       - NET_ADMIN
     volumes:
-      - /path/to/config/qbittorrent:/config
-      - /host/data/torrents:/data/torrents
+      - /arr-stack/config/qbittorrent:/config
+      - /arr-stack/data/torrents:/data/torrents
     networks:
       - exposed-internal
     environment:
@@ -125,8 +125,8 @@ services:
     cap_add:
       - NET_ADMIN
     volumes:
-      - /path/to/config/sabnzbd:/config
-      - /host/data/usenet:/data/usenet
+      - /arr-stack/config/sabnzbd:/config
+      - /arr-stack/data/usenet:/data/usenet
     networks:
       - exposed-internal
     environment:
@@ -163,8 +163,8 @@ services:
   jellyfin:
     image: ghcr.io/hotio/jellyfin
     volumes:
-      - /path/to/config/jellyfin:/config
-      - /host/data/media:/data/media
+      - /arr-stack/config/jellyfin:/config
+      - /arr-stack/data/media:/data/media
     networks:
       - exposed-internal
       - exposed-external
