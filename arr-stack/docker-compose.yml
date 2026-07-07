@@ -145,7 +145,7 @@ services:
       - VPN_PROVIDER=pia
       - VPN_LAN_NETWORK=192.168.1.0/24
       - VPN_LAN_LEAK_ENABLED=false
-      # - VPN_EXPOSE_PORTS_ON_LAN
+      - VPN_EXPOSE_PORTS_ON_LAN=8080
       - VPN_AUTO_PORT_FORWARD=true
       # - VPN_PORT_REDIRECTS
       - VPN_HEALTHCHECK_ENABLED=false
@@ -169,7 +169,6 @@ services:
     labels:
       - "traefik.enable=true"
       - traefik.http.routers.sabnzbd.rule=Host(`sabnzbd.mnemosyne.lan`)
-      - traefik.http.services.sabnzbd.loadbalancer.server.port=8096
       - traefik.http.services.sabnzbd.loadbalancer.server.port=8080
       - traefik.http.routers.sabnzbd.entrypoints=web
 
