@@ -8,8 +8,12 @@ services:
       - no-new-privileges:true
     command:
       - "--api.insecure=true"
-      - "--providers.docker=true"
       - "--entrypoints.web.address=:81"
+
+      # Providers
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--providers.docker.network=exposed-internal"
     ports:
       - "81:80"
       - "8080:8080"
