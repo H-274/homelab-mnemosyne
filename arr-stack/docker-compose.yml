@@ -114,7 +114,7 @@ services:
       # - VPN_PIA_PREFERRED_REGION
       # - VPN_PIA_DIP_TOKEN
       - VPN_PIA_PORT_FORWARD_PERSIST=false
-      - PRIVOXY_ENABLED=true
+      - PRIVOXY_ENABLED=false
       - UNBOUND_ENABLED=false
       # - UNBOUND_NAMESERVERS
       # --- Basic --- #
