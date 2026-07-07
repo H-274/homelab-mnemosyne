@@ -101,7 +101,7 @@ services:
       - VPN_ENABLED=true
       - VPN_CONF=wg0
       - VPN_PROVIDER=pia
-      - VPN_LAN_NETWORK=192.168.1.0/24
+      - VPN_LAN_NETWORK=172.16.17.6/24
       - VPN_LAN_LEAK_ENABLED=false
       # - VPN_EXPOSE_PORTS_ON_LAN
       - VPN_AUTO_PORT_FORWARD=true
@@ -130,7 +130,7 @@ services:
       - traefik.http.routers.qbittorrent.rule=Host(`qbittorrent.mnemosyne.lan`)
       - traefik.http.services.qbittorrent.loadbalancer.server.port=8080
       - traefik.http.routers.qbittorrent.entrypoints=web
-      # - traefik.http.routers.qbittorrent.tls=true
+      - traefik.http.routers.qbittorrent.tls=true
 
   sabnzbd:
     image: ghcr.io/hotio/sabnzbd
