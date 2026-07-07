@@ -21,7 +21,7 @@ services:
       # Providers
       - "--providers.docker=true"
       - "--providers.docker.exposedbydefault=false"
-      - "--providers.docker.network=proxy"
+      - "--providers.docker.network=exposed-internal"
 
       # API & Dashboard
       - "--api.dashboard=true"
