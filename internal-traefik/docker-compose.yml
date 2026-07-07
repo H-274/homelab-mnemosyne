@@ -8,11 +8,11 @@ services:
       - no-new-privileges:true
     command:
       # EntryPoints
-      - "--entrypoints.web.address=:81"
+      - "--entrypoints.web.address=:80"
       - "--entrypoints.web.http.redirections.entrypoint.to=websecure"
       - "--entrypoints.web.http.redirections.entrypoint.scheme=https"
       - "--entrypoints.web.http.redirections.entrypoint.permanent=true"
-      - "--entrypoints.websecure.address=:444"
+      - "--entrypoints.websecure.address=:443"
       - "--entrypoints.websecure.http.tls=true"
 
       # Attach the static configuration tls.yaml file that contains the tls configuration settings
