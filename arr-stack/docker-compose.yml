@@ -98,11 +98,11 @@ services:
     networks:
       - exposed-internal
     environment:
-      - VPN_ENABLED=false
+      - VPN_ENABLED=true
       - VPN_CONF=wg0
       - VPN_PROVIDER=pia
       - VPN_LAN_NETWORK=192.168.1.0/24
-      - VPN_LAN_LEAK_ENABLED=true
+      - VPN_LAN_LEAK_ENABLED=false
       # - VPN_EXPOSE_PORTS_ON_LAN
       - VPN_AUTO_PORT_FORWARD=true
       # - VPN_PORT_REDIRECTS
@@ -114,7 +114,7 @@ services:
       # - VPN_PIA_PREFERRED_REGION
       # - VPN_PIA_DIP_TOKEN
       - VPN_PIA_PORT_FORWARD_PERSIST=false
-      - PRIVOXY_ENABLED=false
+      - PRIVOXY_ENABLED=true
       - UNBOUND_ENABLED=false
       # - UNBOUND_NAMESERVERS
       # --- Basic --- #
