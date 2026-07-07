@@ -37,7 +37,7 @@ services:
     restart: unless-stopped
     labels:
       - "traefik.enable=true"
-      - traefik.http.routers.sonarr.rule=Host(`sonarr.jsmarier.com`)
+      - traefik.http.routers.sonarr.rule=Host(`sonarr.mnemosyne.lan`)
       - traefik.http.services.sonarr.loadbalancer.server.port=8989
       - traefik.http.routers.sonarr.entrypoints=web
 
@@ -79,7 +79,7 @@ services:
     restart: unless-stopped
     labels:
       - "traefik.enable=true"
-      - traefik.http.routers.radarr.rule=Host(`radarr.jsmarier.com`)
+      - traefik.http.routers.radarr.rule=Host(`radarr.mnemosyne.lan`)
       - traefik.http.services.radarr.loadbalancer.server.port=7878
       - traefik.http.routers.radarr.entrypoints=web
 
@@ -122,7 +122,7 @@ services:
     restart: unless-stopped
     labels:
       - "traefik.enable=true"
-      - traefik.http.routers.qbittorrent.rule=Host(`qbittorrent.jsmarier.com`)
+      - traefik.http.routers.qbittorrent.rule=Host(`qbittorrent.mnemosyne.lan`)
       - traefik.http.services.qbittorrent.loadbalancer.server.port=8080
       - traefik.http.routers.qbittorrent.entrypoints=web
 
@@ -164,7 +164,7 @@ services:
     restart: unless-stopped
     labels:
       - "traefik.enable=true"
-      - traefik.http.routers.sabnzbd.rule=Host(`sabnzbd.jsmarier.com`)
+      - traefik.http.routers.sabnzbd.rule=Host(`sabnzbd.mnemosyne.lan`)
       - traefik.http.services.sabnzbd.loadbalancer.server.port=8080
       - traefik.http.routers.sabnzbd.entrypoints=web
 
