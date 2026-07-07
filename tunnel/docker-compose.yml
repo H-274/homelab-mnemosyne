@@ -7,3 +7,10 @@ services:
       - PANGOLIN_ENDPOINT
       - NEWT_ID
       - NEWT_SECRET
+    networks:
+      - exposed-external
+
+networks:
+  exposed-external:
+    name: exposed-external
+    external: true
