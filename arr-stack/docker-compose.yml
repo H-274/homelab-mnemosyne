@@ -128,6 +128,7 @@ services:
     labels:
       - traefik.enable=true
       - traefik.http.routers.qbittorrent.rule=Host(`qbittorrent.mnemosyne.lan`)
+      - traefik.http.services.qbittorrent.loadbalancer.passhostheader=true
       - traefik.http.services.qbittorrent.loadbalancer.server.port=8080
       - traefik.http.routers.qbittorrent.entrypoints=web
       - traefik.http.routers.qbittorrent.tls=true
