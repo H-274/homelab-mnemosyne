@@ -10,7 +10,7 @@ services:
       - "--providers.docker=true"
       - "--providers.docker.exposedbydefault=false"
       - "--entrypoints.web.address=:80"
-      - "--entrypoint.websecure.address=:443"
+      - "--entrypoints.websecure.address=:443"
     ports:
       - "81:80"
       - "444:443"
