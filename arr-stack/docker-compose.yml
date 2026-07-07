@@ -145,7 +145,7 @@ services:
       - VPN_PROVIDER=pia
       - VPN_LAN_NETWORK=192.168.1.0/24
       - VPN_LAN_LEAK_ENABLED=false
-      - VPN_EXPOSE_PORTS_ON_LAN=8080
+      # - VPN_EXPOSE_PORTS_ON_LAN
       - VPN_AUTO_PORT_FORWARD=true
       # - VPN_PORT_REDIRECTS
       - VPN_HEALTHCHECK_ENABLED=false
@@ -188,9 +188,9 @@ services:
     restart: unless-stopped
     labels:
       - "traefik.enable=true"
-      - traefik.http.routers.sabnzbd.rule=Host(`jellyfin.jsmarier.com`)
-      - traefik.http.services.sabnzbd.loadbalancer.server.port=8096
-      - traefik.http.routers.sabnzbd.entrypoints=web
+      - traefik.http.routers.jellyfin.rule=Host(`jellyfin.jsmarier.com`)
+      - traefik.http.services.jellyfin.loadbalancer.server.port=8096
+      - traefik.http.routers.jellyfin.entrypoints=web
 
 networks:
   exposed-internal:
