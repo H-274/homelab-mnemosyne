@@ -1,6 +1,7 @@
 services:
   sonarr:
     image: ghcr.io/hotio/sonarr
+    hostname: sonarr.internal
     cap_add:
       - NET_ADMIN
     volumes:
@@ -43,6 +44,7 @@ services:
 
   radarr:
     image: ghcr.io/hotio/radarr
+    hostname: radarr.internal
     cap_add:
       - NET_ADMIN
     volumes:
@@ -85,6 +87,7 @@ services:
 
   qbittorrent:
     image: ghcr.io/hotio/qbittorrent
+    hostname: qbittorrent.internal
     cap_add:
       - NET_ADMIN
     volumes:
@@ -128,6 +131,7 @@ services:
 
   sabnzbd:
     image: ghcr.io/hotio/sabnzbd
+    hostname: sabnzbd.internal
     cap_add:
       - NET_ADMIN
     volumes:
@@ -170,6 +174,7 @@ services:
 
   jellyfin:
     image: ghcr.io/hotio/jellyfin
+    hostname: jellyfin.internal
     volumes:
       - /arr-stack/config/jellyfin:/config
       - /arr-stack/data/media:/data/media
