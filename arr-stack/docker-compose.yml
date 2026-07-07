@@ -98,7 +98,7 @@ services:
     networks:
       - exposed-internal
     environment:
-      - VPN_ENABLED=true
+      - VPN_ENABLED=false
       - VPN_CONF=wg0
       - VPN_PROVIDER=pia
       - VPN_LAN_NETWORK=192.168.1.0/24
