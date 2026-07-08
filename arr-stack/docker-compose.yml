@@ -47,10 +47,10 @@ services:
     labels:
       # traefik
       traefik.enable: true
-      traefik.http.routers.sonarr.rule: Host(`sonarr-en.mnemosyne.lan`)
-      traefik.http.services.sonarr.loadbalancer.server.port: 8989
-      traefik.http.routers.sonarr.entrypoints: web
-      traefik.http.routers.sonarr.tls: true
+      traefik.http.routers.sonarr-en.rule: Host(`sonarr-en.mnemosyne.lan`)
+      traefik.http.services.sonarr-en.loadbalancer.server.port: 8989
+      traefik.http.routers.sonarr-en.entrypoints: web
+      traefik.http.routers.sonarr-en.tls: true
       # arcane
       com.getarcaneapp.arcane.icon: https://raw.githubusercontent.com/Sonarr/Sonarr/refs/heads/v5-develop/Logo/sonarr-simple.svg
 
@@ -95,10 +95,10 @@ services:
     labels:
       # traefik
       traefik.enable: true
-      traefik.http.routers.sonarr.rule: Host(`sonarr-fr.mnemosyne.lan`)
-      traefik.http.services.sonarr.loadbalancer.server.port: 8989
-      traefik.http.routers.sonarr.entrypoints: web
-      traefik.http.routers.sonarr.tls: true
+      traefik.http.routers.sonarr-fr.rule: Host(`sonarr-fr.mnemosyne.lan`)
+      traefik.http.services.sonarr-fr.loadbalancer.server.port: 8989
+      traefik.http.routers.sonarr-fr.entrypoints: web
+      traefik.http.routers.sonarr-fr.tls: true
       # arcane
       com.getarcaneapp.arcane.icon: https://raw.githubusercontent.com/Sonarr/Sonarr/refs/heads/v5-develop/Logo/sonarr-simple.svg
 
