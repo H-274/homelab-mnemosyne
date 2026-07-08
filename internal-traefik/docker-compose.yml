@@ -1,7 +1,7 @@
 version: "3.3"
 
 x-arcane:
-  icon: https://doc.traefik.io/traefik/assets/images/logo-traefik-proxy-logo.svg
+  icon: https://raw.githubusercontent.com/traefik/traefik/refs/heads/master/webui/public/icons/safari-pinned-tab.svg
   urls:
     - https://doc.traefik.io/traefik/https://doc.traefik.io/traefik/
 
