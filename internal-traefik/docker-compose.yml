@@ -41,13 +41,13 @@ services:
     # Traefik Dynamic configuration via Docker labels
     labels:
       # Enable self‑routing
-      - traefik.enable=true
+      traefik.enable: true
 
       # Dashboard router
-      - traefik.http.routers.dashboard.rule=Host(`dashboard.mnemosyne.lan`)
-      - traefik.http.routers.dashboard.entrypoints=web
-      - traefik.http.routers.dashboard.service=api@internal
-      - traefik.http.routers.dashboard.tls=true
+      traefik.http.routers.dashboard.rule: Host(`dashboard.mnemosyne.lan`)
+      traefik.http.routers.dashboard.entrypoints: web
+      traefik.http.routers.dashboard.service: api@internal
+      traefik.http.routers.dashboard.tls: true
 
       # Basic‑auth middleware
       # - "traefik.http.middlewares.dashboard-auth.basicauth.users=<PASTE_HASH_HERE>"

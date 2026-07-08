@@ -45,11 +45,14 @@ services:
       - WEBUI_PORTS=8989/tcp
     restart: unless-stopped
     labels:
-      - traefik.enable=true
-      - traefik.http.routers.sonarr.rule=Host(`sonarr.mnemosyne.lan`)
-      - traefik.http.services.sonarr.loadbalancer.server.port=8989
-      - traefik.http.routers.sonarr.entrypoints=web
-      - traefik.http.routers.sonarr.tls=true
+      # traefik
+      traefik.enable: true
+      traefik.http.routers.sonarr.rule: Host(`sonarr.mnemosyne.lan`)
+      traefik.http.services.sonarr.loadbalancer.server.port: 8989
+      traefik.http.routers.sonarr.entrypoints: web
+      traefik.http.routers.sonarr.tls: true
+      # arcane
+      com.getarcaneapp.arcane.icon: https://raw.githubusercontent.com/Sonarr/Sonarr/refs/heads/v5-develop/Logo/sonarr-simple.svg
 
   radarr:
     container_name: radarr
@@ -90,11 +93,14 @@ services:
       - WEBUI_PORTS=7878/tcp
     restart: unless-stopped
     labels:
-      - traefik.enable=true
-      - traefik.http.routers.radarr.rule=Host(`radarr.mnemosyne.lan`)
-      - traefik.http.services.radarr.loadbalancer.server.port=7878
-      - traefik.http.routers.radarr.entrypoints=web
-      - traefik.http.routers.radarr.tls=true
+      # traefik
+      traefik.enable: true
+      traefik.http.routers.radarr.rule: Host(`radarr.mnemosyne.lan`)
+      traefik.http.services.radarr.loadbalancer.server.port: 7878
+      traefik.http.routers.radarr.entrypoints: web
+      traefik.http.routers.radarr.tls: true
+      # arcane
+      com.getarcaneapp.arcane.icon: https://raw.githubusercontent.com/Radarr/Radarr/refs/heads/develop/Logo/Radarr.svg
 
   qbittorrent:
     container_name: qbittorrent
@@ -136,12 +142,15 @@ services:
       - LIBTORRENT=v1
     restart: unless-stopped
     labels:
-      - traefik.enable=true
-      - traefik.http.routers.qbittorrent.rule=Host(`qbittorrent.mnemosyne.lan`)
-      - traefik.http.services.qbittorrent.loadbalancer.passhostheader=true
-      - traefik.http.services.qbittorrent.loadbalancer.server.port=8080
-      - traefik.http.routers.qbittorrent.entrypoints=web
-      - traefik.http.routers.qbittorrent.tls=true
+      # traefik
+      traefik.enable: true
+      traefik.http.routers.qbittorrent.rule: Host(`qbittorrent.mnemosyne.lan`)
+      traefik.http.services.qbittorrent.loadbalancer.passhostheader: true
+      traefik.http.services.qbittorrent.loadbalancer.server.port: 8080
+      traefik.http.routers.qbittorrent.entrypoints: web
+      traefik.http.routers.qbittorrent.tls: true
+      # arcane
+      com.getarcaneapp.arcane.icon: https://raw.githubusercontent.com/qbittorrent/qBittorrent/refs/heads/master/src/icons/qbittorrent-tray.svg
 
   sabnzbd:
     container_name: sabnzbd
@@ -182,11 +191,14 @@ services:
       - WEBUI_PORTS=8080/tcp
     restart: unless-stopped
     labels:
-      - traefik.enable=true
-      - traefik.http.routers.sabnzbd.rule=Host(`sabnzbd.mnemosyne.lan`)
-      - traefik.http.services.sabnzbd.loadbalancer.server.port=8080
-      - traefik.http.routers.sabnzbd.entrypoints=web
-      - traefik.http.routers.sabnzbd.tls=true
+      # traefik
+      traefik.enable: true
+      traefik.http.routers.sabnzbd.rule: Host(`sabnzbd.mnemosyne.lan`)
+      traefik.http.services.sabnzbd.loadbalancer.server.port: 8080
+      traefik.http.routers.sabnzbd.entrypoints: web
+      traefik.http.routers.sabnzbd.tls: true
+      # arcane
+      com.getarcaneapp.arcane.icon: https://raw.githubusercontent.com/sabnzbd/sabnzbd/refs/heads/develop/icons/sabnzbd.ico
 
   jellyfin:
     container_name: jellyfin
@@ -204,11 +216,14 @@ services:
       - UMASK=002
     restart: unless-stopped
     labels:
-      - traefik.enable=true
-      - traefik.http.routers.jellyfin.rule=Host(`jellyfin.jsmarier.com`)
-      - traefik.http.services.jellyfin.loadbalancer.server.port=8096
-      - traefik.http.routers.jellyfin.entrypoints=web
-      - traefik.http.routers.jellyfin.tls=true
+      # traefik
+      traefik.enable: true
+      traefik.http.routers.jellyfin.rule: Host(`jellyfin.jsmarier.com`)
+      traefik.http.services.jellyfin.loadbalancer.server.port: 8096
+      traefik.http.routers.jellyfin.entrypoints: web
+      traefik.http.routers.jellyfin.tls: true
+      # arcane
+      com.getarcaneapp.arcane.icon: https://raw.githubusercontent.com/jellyfin/jellyfin-ux/refs/heads/master/logos/SVG/jellyfin-icon--color-on-dark.svg
 
   flaresolverr:
     container_name: flaresolverr
@@ -219,8 +234,13 @@ services:
       - 8191:8191
     environment:
       - LOG_LEVEL=info
+      - PROMETHEUS_ENABLED=true
+      - PROMETHEUS_PORT=8192
     networks:
       - exposed-internal
+    labels:
+      # arcane
+      com.getarcaneapp.arcane.icon: https://raw.githubusercontent.com/FlareSolverr/FlareSolverr/refs/heads/master/resources/flaresolverr_logo.svg
 
 networks:
   exposed-internal:
