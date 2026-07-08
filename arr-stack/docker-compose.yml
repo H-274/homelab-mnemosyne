@@ -6,14 +6,14 @@ x-arcane:
     - https://wiki.servarr.com/
 
 services:
-  sonarr:
-    container_name: sonarr
+  sonarr-en:
+    container_name: sonarr-en
     image: ghcr.io/hotio/sonarr
-    hostname: sonarr.internal
+    hostname: sonarr-en.internal
     cap_add:
       - NET_ADMIN
     volumes:
-      - /arr-stack/config/sonarr:/config
+      - /arr-stack/config/sonarr/en:/config
       - /arr-stack/data:/data
     networks:
       - exposed-internal
@@ -47,7 +47,55 @@ services:
     labels:
       # traefik
       traefik.enable: true
-      traefik.http.routers.sonarr.rule: Host(`sonarr.mnemosyne.lan`)
+      traefik.http.routers.sonarr.rule: Host(`sonarr-en.mnemosyne.lan`)
+      traefik.http.services.sonarr.loadbalancer.server.port: 8989
+      traefik.http.routers.sonarr.entrypoints: web
+      traefik.http.routers.sonarr.tls: true
+      # arcane
+      com.getarcaneapp.arcane.icon: https://raw.githubusercontent.com/Sonarr/Sonarr/refs/heads/v5-develop/Logo/sonarr-simple.svg
+
+  sonarr-fr:
+    container_name: sonarr-fr
+    image: ghcr.io/hotio/sonarr
+    hostname: sonarr-fr.internal
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - /arr-stack/config/sonarr/fr:/config
+      - /arr-stack/data:/data
+    networks:
+      - exposed-internal
+    environment:
+      - VPN_ENABLED=true
+      - VPN_CONF=wg0
+      - VPN_PROVIDER=pia
+      - VPN_LAN_NETWORK=192.168.1.0/24
+      - VPN_LAN_LEAK_ENABLED=false
+      # - VPN_EXPOSE_PORTS_ON_LAN
+      - VPN_AUTO_PORT_FORWARD=true
+      # - VPN_PORT_REDIRECTS
+      - VPN_HEALTHCHECK_ENABLED=false
+      - VPN_NAMESERVERS
+      # - VPN_INTERFACE_PREFIXES
+      - VPN_PIA_USER
+      - VPN_PIA_PASS
+      # - VPN_PIA_PREFERRED_REGION
+      # - VPN_PIA_DIP_TOKEN
+      - VPN_PIA_PORT_FORWARD_PERSIST=false
+      - PRIVOXY_ENABLED=true
+      - UNBOUND_ENABLED=false
+      # - UNBOUND_NAMESERVERS
+      # --- Basic --- #
+      - PUID=111
+      - PGID=321
+      - UMASK=002
+      - TZ=Etc/UTC
+      - WEBUI_PORTS=8989/tcp
+    restart: unless-stopped
+    labels:
+      # traefik
+      traefik.enable: true
+      traefik.http.routers.sonarr.rule: Host(`sonarr-fr.mnemosyne.lan`)
       traefik.http.services.sonarr.loadbalancer.server.port: 8989
       traefik.http.routers.sonarr.entrypoints: web
       traefik.http.routers.sonarr.tls: true
