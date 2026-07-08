@@ -210,6 +210,18 @@ services:
       - traefik.http.routers.jellyfin.entrypoints=web
       - traefik.http.routers.jellyfin.tls=true
 
+  flaresolverr:
+    container_name: flaresolverr
+    image: ghcr.io/flaresolverr/flaresolverr:latest
+    hostname: flaresolverr.internal
+    restart: unless-stopped
+    ports:
+      - 8191:8191
+    environment:
+      - LOG_LEVEL=info
+    networks:
+      - exposed-internal
+
 networks:
   exposed-internal:
     external: true
