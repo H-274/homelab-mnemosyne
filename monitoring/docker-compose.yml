@@ -1,0 +1,22 @@
+version: "3.3"
+
+x-arcane:
+  icon: https://grafana.com/media/docs/grafana-cloud/infrastructure/grafanalogo.svg
+  urls:
+    - https://grafana.com/docs/grafana/latest/
+
+services:
+  grafana:
+    image: grafana/grafana-enterprise
+    container_name: grafana
+    hostname: grafana.internal
+    restart: unless-stopped
+    volumes:
+      - /monitoring/grafana:/var/lib/grafana
+    networks:
+      - exposed-internal
+
+networks:
+  exposed-internal:
+    name: exposed-internal
+    external: true
