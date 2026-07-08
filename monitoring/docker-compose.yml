@@ -15,6 +15,13 @@ services:
       - /monitoring/grafana:/var/lib/grafana
     networks:
       - exposed-internal
+    labels:
+      # traefik
+      traefik.enable: true
+      traefik.http.routers.grafana.rule: Host(`grafana.mnemosyne.lan`)
+      traefik.http.services.grafana.loadbalancer.server.port: 3000
+      traefik.http.routers.grafana.entrypoints: web
+      traefik.http.routers.grafana.tls: true
 
 networks:
   exposed-internal:
