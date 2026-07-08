@@ -1,5 +1,13 @@
+version: "3.3"
+
+x-arcane:
+  icon: https://raw.githubusercontent.com/fosrl/pangolin/refs/heads/main/public/logo/pangolin_orange.svg
+  urls:
+    - https://docs.pangolin.net/manage/sites/understanding-sites#newt-site-recommended
+
 services:
   newt:
+    container_name: newt
     image: fosrl/newt
     restart: unless-stopped
     environment:

@@ -1,7 +1,13 @@
 version: "3.3"
 
+x-arcane:
+  icon: https://doc.traefik.io/traefik/assets/images/logo-traefik-proxy-logo.svg
+  urls:
+    - https://doc.traefik.io/traefik/https://doc.traefik.io/traefik/
+
 services:
   traefik:
+    container_name: traefik
     image: traefik:v3.7
     restart: unless-stopped
     security_opt:

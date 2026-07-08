@@ -1,5 +1,13 @@
+version: "3.3"
+
+x-arcane:
+  icon: https://raw.githubusercontent.com/Servarr/Wiki/refs/heads/master/assets/servarr/servarr_dark_.svg
+  urls:
+    - https://wiki.servarr.com/
+
 services:
   sonarr:
+    container_name: sonarr
     image: ghcr.io/hotio/sonarr
     hostname: sonarr.internal
     cap_add:
@@ -44,6 +52,7 @@ services:
       - traefik.http.routers.sonarr.tls=true
 
   radarr:
+    container_name: radarr
     image: ghcr.io/hotio/radarr
     hostname: radarr.internal
     cap_add:
@@ -88,6 +97,7 @@ services:
       - traefik.http.routers.radarr.tls=true
 
   qbittorrent:
+    container_name: qbittorrent
     image: ghcr.io/hotio/qbittorrent
     hostname: qbittorrent.internal
     cap_add:
@@ -134,6 +144,7 @@ services:
       - traefik.http.routers.qbittorrent.tls=true
 
   sabnzbd:
+    container_name: sabnzbd
     image: ghcr.io/hotio/sabnzbd
     hostname: sabnzbd.internal
     cap_add:
@@ -178,6 +189,7 @@ services:
       - traefik.http.routers.sabnzbd.tls=true
 
   jellyfin:
+    container_name: jellyfin
     image: ghcr.io/hotio/jellyfin
     hostname: jellyfin.internal
     volumes:
