@@ -278,8 +278,6 @@ services:
     image: ghcr.io/flaresolverr/flaresolverr:latest
     hostname: flaresolverr.internal
     restart: unless-stopped
-    ports:
-      - 8191:8191
     environment:
       - LOG_LEVEL=info
       - PROMETHEUS_ENABLED=true
