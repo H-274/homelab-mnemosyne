@@ -39,6 +39,9 @@ services:
       - "--web.enable-lifecycle"
     networks:
       - exposed-internal
+    labels:
+      # arcane
+      com.getarcaneapp.arcane.icon: https://raw.githubusercontent.com/prometheus/docs/ca2961b495c3e2a1e4586899c26de692fa5a28e7/static/prometheus_logo_orange_circle.svg
 
 networks:
   exposed-internal:
