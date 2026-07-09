@@ -37,6 +37,9 @@ services:
       - "--log.level=INFO"
       - "--accesslog=true"
       - "--metrics.prometheus=true"
+      - "--metrics.prometheus.addEntryPointsLabels=true"
+      - "--metrics.prometheus.addRoutersLabels=true"
+      - "--metrics.prometheus.addServicesLabels=true"
 
     # Traefik Dynamic configuration via Docker labels
     labels:
