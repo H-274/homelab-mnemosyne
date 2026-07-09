@@ -8,6 +8,7 @@ x-arcane:
 services:
   traefik:
     container_name: traefik
+    hostname: traefik.internal
     image: traefik:v3.7
     restart: unless-stopped
     security_opt:
