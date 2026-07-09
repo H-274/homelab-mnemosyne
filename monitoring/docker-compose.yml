@@ -1,7 +1,7 @@
 version: "3.3"
 
 x-arcane:
-  icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/grafana.svf
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/grafana.svg
   urls:
     - https://grafana.com/docs/grafana/latest/
 
