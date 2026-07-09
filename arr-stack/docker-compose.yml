@@ -1,7 +1,7 @@
 version: "3.3"
 
 x-arcane:
-  icon: https://raw.githubusercontent.com/Servarr/Wiki/refs/heads/master/assets/servarr/servarr_dark_.svg
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/servarr.svg
   urls:
     - https://wiki.servarr.com/
 
@@ -52,7 +52,7 @@ services:
       traefik.http.routers.sonarr-en.entrypoints: web
       traefik.http.routers.sonarr-en.tls: true
       # arcane
-      com.getarcaneapp.arcane.icon: https://raw.githubusercontent.com/Sonarr/Sonarr/refs/heads/v5-develop/Logo/sonarr-simple.svg
+      com.getarcaneapp.arcane.icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/sonarr.svg
 
   sonarr-fr:
     container_name: sonarr-fr
@@ -100,7 +100,7 @@ services:
       traefik.http.routers.sonarr-fr.entrypoints: web
       traefik.http.routers.sonarr-fr.tls: true
       # arcane
-      com.getarcaneapp.arcane.icon: https://raw.githubusercontent.com/Sonarr/Sonarr/refs/heads/v5-develop/Logo/sonarr-simple.svg
+      com.getarcaneapp.arcane.icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/sonarr.svg
 
   radarr-en:
     container_name: radarr-en
@@ -148,7 +148,7 @@ services:
       traefik.http.routers.radarr-en.entrypoints: web
       traefik.http.routers.radarr-en.tls: true
       # arcane
-      com.getarcaneapp.arcane.icon: https://raw.githubusercontent.com/Radarr/Radarr/refs/heads/develop/Logo/Radarr.svg
+      com.getarcaneapp.arcane.icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/radarr.svg
 
   radarr-fr:
     container_name: radarr-fr
@@ -196,7 +196,7 @@ services:
       traefik.http.routers.radarr-fr.entrypoints: web
       traefik.http.routers.radarr-fr.tls: true
       # arcane
-      com.getarcaneapp.arcane.icon: https://raw.githubusercontent.com/Radarr/Radarr/refs/heads/develop/Logo/Radarr.svg
+      com.getarcaneapp.arcane.icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/radarr.svg
 
   qbittorrent:
     container_name: qbittorrent
@@ -246,7 +246,7 @@ services:
       traefik.http.routers.qbittorrent.entrypoints: web
       traefik.http.routers.qbittorrent.tls: true
       # arcane
-      com.getarcaneapp.arcane.icon: https://raw.githubusercontent.com/qbittorrent/qBittorrent/refs/heads/master/src/icons/qbittorrent-tray.svg
+      com.getarcaneapp.arcane.icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/qbittorrent.svg
 
   sabnzbd:
     container_name: sabnzbd
@@ -294,7 +294,7 @@ services:
       traefik.http.routers.sabnzbd.entrypoints: web
       traefik.http.routers.sabnzbd.tls: true
       # arcane
-      com.getarcaneapp.arcane.icon: https://raw.githubusercontent.com/sabnzbd/sabnzbd/refs/heads/develop/icons/sabnzbd.ico
+      com.getarcaneapp.arcane.icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/sabnzbd.svg
 
   jellyfin:
     container_name: jellyfin
@@ -319,7 +319,7 @@ services:
       traefik.http.routers.jellyfin.entrypoints: web
       traefik.http.routers.jellyfin.tls: true
       # arcane
-      com.getarcaneapp.arcane.icon: https://raw.githubusercontent.com/jellyfin/jellyfin-ux/refs/heads/master/logos/SVG/jellyfin-icon--color-on-dark.svg
+      com.getarcaneapp.arcane.icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/jellyfin.svg
 
   flaresolverr:
     container_name: flaresolverr
@@ -334,7 +334,7 @@ services:
       - exposed-internal
     labels:
       # arcane
-      com.getarcaneapp.arcane.icon: https://raw.githubusercontent.com/FlareSolverr/FlareSolverr/refs/heads/master/resources/flaresolverr_logo.svg
+      com.getarcaneapp.arcane.icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/flaresolverr.svg
 
 networks:
   exposed-internal:

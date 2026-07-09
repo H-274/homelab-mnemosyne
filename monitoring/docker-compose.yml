@@ -1,7 +1,7 @@
 version: "3.3"
 
 x-arcane:
-  icon: https://grafana.com/media/docs/grafana-cloud/infrastructure/grafanalogo.svg
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/grafana.svf
   urls:
     - https://grafana.com/docs/grafana/latest/
 
@@ -41,7 +41,7 @@ services:
       - exposed-internal
     labels:
       # arcane
-      com.getarcaneapp.arcane.icon: https://raw.githubusercontent.com/prometheus/docs/ca2961b495c3e2a1e4586899c26de692fa5a28e7/static/prometheus_logo_orange_circle.svg
+      com.getarcaneapp.arcane.icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/prometheus.svg
 
 networks:
   exposed-internal:
