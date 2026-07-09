@@ -134,7 +134,7 @@ services:
       - UNBOUND_ENABLED=false
       # - UNBOUND_NAMESERVERS
       # --- Basic --- #
-      - PUID=111
+      - PUID=222
       - PGID=321
       - UMASK=002
       - TZ=Etc/UTC
@@ -182,7 +182,7 @@ services:
       - UNBOUND_ENABLED=false
       # - UNBOUND_NAMESERVERS
       # --- Basic --- #
-      - PUID=111
+      - PUID=222
       - PGID=321
       - UMASK=002
       - TZ=Etc/UTC
@@ -197,6 +197,54 @@ services:
       traefik.http.routers.radarr-fr.tls: true
       # arcane
       com.getarcaneapp.arcane.icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/radarr.svg
+
+  prowlarr:
+    container_name: prowlarr
+    image: ghcr.io/hotio/prowlarr
+    hostname: prowlarr.internal
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - /arr-stack/config/prowlarr:/config
+      - /arr-stack/data:/data
+    networks:
+      - exposed-internal
+    environment:
+      - VPN_ENABLED=true
+      - VPN_CONF=wg0
+      - VPN_PROVIDER=pia
+      - VPN_LAN_NETWORK=192.168.1.0/24
+      - VPN_LAN_LEAK_ENABLED=false
+      # - VPN_EXPOSE_PORTS_ON_LAN
+      - VPN_AUTO_PORT_FORWARD=true
+      # - VPN_PORT_REDIRECTS
+      - VPN_HEALTHCHECK_ENABLED=false
+      - VPN_NAMESERVERS
+      # - VPN_INTERFACE_PREFIXES
+      - VPN_PIA_USER
+      - VPN_PIA_PASS
+      # - VPN_PIA_PREFERRED_REGION
+      # - VPN_PIA_DIP_TOKEN
+      - VPN_PIA_PORT_FORWARD_PERSIST=false
+      - PRIVOXY_ENABLED=true
+      - UNBOUND_ENABLED=false
+      # - UNBOUND_NAMESERVERS
+      # --- Basic --- #
+      - PUID=333
+      - PGID=321
+      - UMASK=002
+      - TZ=Etc/UTC
+      - WEBUI_PORTS=9696/tcp
+    restart: unless-stopped
+    labels:
+      # traefik
+      traefik.enable: true
+      traefik.http.routers.prowlarr.rule: Host(`prowlarr.mnemosyne.lan`)
+      traefik.http.services.prowlarr.loadbalancer.server.port: 9696
+      traefik.http.routers.prowlarr.entrypoints: web
+      traefik.http.routers.prowlarr.tls: true
+      # arcane
+      com.getarcaneapp.arcane.icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/prowlarr.svg
 
   qbittorrent:
     container_name: qbittorrent
@@ -230,7 +278,7 @@ services:
       - UNBOUND_ENABLED=false
       # - UNBOUND_NAMESERVERS
       # --- Basic --- #
-      - PUID=222
+      - PUID=444
       - PGID=321
       - UMASK=002
       - TZ=Etc/UTC
@@ -280,7 +328,7 @@ services:
       - UNBOUND_ENABLED=false
       # - UNBOUND_NAMESERVERS
       # --- Basic --- #
-      - PUID=333
+      - PUID=555
       - PGID=321
       - UMASK=002
       - TZ=Etc/UTC
@@ -307,7 +355,7 @@ services:
       - exposed-internal
       - exposed-external
     environment:
-      - PUID=444
+      - PUID=666
       - PGID=321
       - UMASK=002
     restart: unless-stopped
