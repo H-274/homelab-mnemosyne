@@ -102,14 +102,14 @@ services:
       # arcane
       com.getarcaneapp.arcane.icon: https://raw.githubusercontent.com/Sonarr/Sonarr/refs/heads/v5-develop/Logo/sonarr-simple.svg
 
-  radarr:
-    container_name: radarr
+  radarr-en:
+    container_name: radarr-en
     image: ghcr.io/hotio/radarr
-    hostname: radarr.internal
+    hostname: radarr-en.internal
     cap_add:
       - NET_ADMIN
     volumes:
-      - /arr-stack/config/radarr:/config
+      - /arr-stack/config/radarr/en:/config
       - /arr-stack/data:/data
     networks:
       - exposed-internal
@@ -143,10 +143,58 @@ services:
     labels:
       # traefik
       traefik.enable: true
-      traefik.http.routers.radarr.rule: Host(`radarr.mnemosyne.lan`)
-      traefik.http.services.radarr.loadbalancer.server.port: 7878
-      traefik.http.routers.radarr.entrypoints: web
-      traefik.http.routers.radarr.tls: true
+      traefik.http.routers.radarr-en.rule: Host(`radarr-en.mnemosyne.lan`)
+      traefik.http.services.radarr-en.loadbalancer.server.port: 7878
+      traefik.http.routers.radarr-en.entrypoints: web
+      traefik.http.routers.radarr-en.tls: true
+      # arcane
+      com.getarcaneapp.arcane.icon: https://raw.githubusercontent.com/Radarr/Radarr/refs/heads/develop/Logo/Radarr.svg
+
+  radarr-fr:
+    container_name: radarr-fr
+    image: ghcr.io/hotio/radarr
+    hostname: radarr-fr.internal
+    cap_add:
+      - NET_ADMIN
+    volumes:
+      - /arr-stack/config/radarr/fr:/config
+      - /arr-stack/data:/data
+    networks:
+      - exposed-internal
+    environment:
+      - VPN_ENABLED=true
+      - VPN_CONF=wg0
+      - VPN_PROVIDER=pia
+      - VPN_LAN_NETWORK=192.168.1.0/24
+      - VPN_LAN_LEAK_ENABLED=false
+      # - VPN_EXPOSE_PORTS_ON_LAN
+      - VPN_AUTO_PORT_FORWARD=true
+      # - VPN_PORT_REDIRECTS
+      - VPN_HEALTHCHECK_ENABLED=false
+      - VPN_NAMESERVERS
+      # - VPN_INTERFACE_PREFIXES
+      - VPN_PIA_USER
+      - VPN_PIA_PASS
+      # - VPN_PIA_PREFERRED_REGION
+      # - VPN_PIA_DIP_TOKEN
+      - VPN_PIA_PORT_FORWARD_PERSIST=false
+      - PRIVOXY_ENABLED=true
+      - UNBOUND_ENABLED=false
+      # - UNBOUND_NAMESERVERS
+      # --- Basic --- #
+      - PUID=111
+      - PGID=321
+      - UMASK=002
+      - TZ=Etc/UTC
+      - WEBUI_PORTS=7878/tcp
+    restart: unless-stopped
+    labels:
+      # traefik
+      traefik.enable: true
+      traefik.http.routers.radarr-fr.rule: Host(`radarr-fr.mnemosyne.lan`)
+      traefik.http.services.radarr-fr.loadbalancer.server.port: 7878
+      traefik.http.routers.radarr-fr.entrypoints: web
+      traefik.http.routers.radarr-fr.tls: true
       # arcane
       com.getarcaneapp.arcane.icon: https://raw.githubusercontent.com/Radarr/Radarr/refs/heads/develop/Logo/Radarr.svg
 
