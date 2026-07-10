@@ -8,6 +8,7 @@ x-arcane:
 services:
   glance:
     container_name: glance
+    hostname: glance.internal
     image: glanceapp/glance
     restart: unless-stopped
     volumes:
@@ -15,9 +16,12 @@ services:
       - /glance/assets:/app/assets
       - /etc/localtime:/etc/localtime:ro
       - /var/run/docker.sock:/var/run/docker.sock:ro
+    networks:
+      - exposed-internal
     labels:
       # traefik
       traefik.enable: true
+      traefik.docker.network: exposed-internal
       traefik.http.routers.glance.rule: Host(`glance.mnemosyne.lan`)
       traefik.http.routers.glance.entrypoints: web
       traefik.http.routers.glance.tls: true
@@ -25,3 +29,7 @@ services:
 
       # arcane
       com.getarcaneapp.arcane.icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/glance.svg
+
+networks:
+  exposed-internal:
+    external: true
