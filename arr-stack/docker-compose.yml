@@ -147,6 +147,10 @@ services:
       traefik.http.services.radarr-en.loadbalancer.server.port: 7878
       traefik.http.routers.radarr-en.entrypoints: web
       traefik.http.routers.radarr-en.tls: true
+
+      traefik.http.routers.radarr.rule: Host(`radarr.mnemosyne.lan`) && Path(`/`)
+      traefik.http.routers.radarr.middlewares: localized-apps
+
       # arcane
       com.getarcaneapp.arcane.icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/radarr.svg
 
