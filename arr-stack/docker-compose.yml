@@ -348,6 +348,8 @@ services:
     container_name: jellyfin
     image: ghcr.io/hotio/jellyfin
     hostname: jellyfin.internal
+    cap_add:
+      - NET_ADMIN
     volumes:
       - /arr-stack/config/jellyfin:/config
       - /arr-stack/data/media:/data/media
