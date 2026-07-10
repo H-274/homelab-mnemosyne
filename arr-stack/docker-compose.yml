@@ -154,7 +154,7 @@ services:
       traefik.http.routers.radarr.priority: 1
       traefik.http.routers.radarr.entrypoints: web
       traefik.http.routers.radarr.tls: true
-      traefik.http.services.radarr.loadbalancer.server.port: 7878
+      traefik.http.routers.services: radarr-en
 
       # arcane
       com.getarcaneapp.arcane.icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/radarr.svg
