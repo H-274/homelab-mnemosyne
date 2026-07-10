@@ -1,0 +1,27 @@
+version: "3.3"
+
+x-arcane:
+  icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/glance.svg
+  urls:
+    - https://github.com/glanceapp/glance
+
+services:
+  glance:
+    container_name: glance
+    image: glanceapp/glance
+    restart: unless-stopped
+    volumes:
+      - /glance/config:/app/config
+      - /glance/assets:/app/assets
+      - /etc/localtime:/etc/localtime:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    labels:
+      # traefik
+      traefik.enable: true
+      traefik.http.routers.glance.rule: Host(`glance.mnemosyne.lan`)
+      traefik.http.routers.glance.entrypoints: web
+      traefik.http.routers.glance.tls: true
+      traefik.http.services.glance.loadbalancer.server.port: 8080
+
+      # arcane
+      com.getarcaneapp.arcane.icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/glance.svg
