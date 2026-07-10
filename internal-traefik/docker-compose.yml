@@ -56,7 +56,7 @@ services:
       traefik.http.routers.dashboard.tls: true
 
       # global middleware
-      traefik.http.middlewares.default-locale.replacepath.path: /en
+      traefik.http.middlewares.default-locale.addprefix.prefix: "/en"
 
       # Basic‑auth middleware
       # - "traefik.http.middlewares.dashboard-auth.basicauth.users=<PASTE_HASH_HERE>"
