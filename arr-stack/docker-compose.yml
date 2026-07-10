@@ -144,13 +144,17 @@ services:
       # traefik
       traefik.enable: true
       traefik.http.routers.radarr-en.rule: Host(`radarr.mnemosyne.lan`) && PathPrefix(`/en`)
-      traefik.http.services.radarr-en.loadbalancer.server.port: 7878
       traefik.http.routers.radarr-en.entrypoints: web
       traefik.http.routers.radarr-en.tls: true
+      traefik.http.services.radarr-en.loadbalancer.server.port: 7878
 
+      # fallback traefik
       traefik.http.routers.radarr.rule: Host(`radarr.mnemosyne.lan`) && PathPrefix(`/`)
       traefik.http.routers.radarr.middlewares: default-locale
       traefik.http.routers.radarr.priority: 1
+      traefik.http.routers.radarr.entrypoints: web
+      traefik.http.routers.radarr.tls: true
+      traefik.http.services.radarr.loadbalancer.server.port: 7878
 
       # arcane
       com.getarcaneapp.arcane.icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/radarr.svg
