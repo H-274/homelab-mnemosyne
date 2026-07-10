@@ -355,9 +355,31 @@ services:
       - exposed-internal
       - exposed-external
     environment:
+      - VPN_ENABLED=true
+      - VPN_CONF=wg0
+      - VPN_PROVIDER=pia
+      - VPN_LAN_NETWORK=192.168.1.0/24
+      - VPN_LAN_LEAK_ENABLED=false
+      # - VPN_EXPOSE_PORTS_ON_LAN
+      - VPN_AUTO_PORT_FORWARD=true
+      # - VPN_PORT_REDIRECTS
+      - VPN_HEALTHCHECK_ENABLED=false
+      - VPN_NAMESERVERS
+      # - VPN_INTERFACE_PREFIXES
+      - VPN_PIA_USER
+      - VPN_PIA_PASS
+      # - VPN_PIA_PREFERRED_REGION
+      # - VPN_PIA_DIP_TOKEN
+      - VPN_PIA_PORT_FORWARD_PERSIST=false
+      - PRIVOXY_ENABLED=true
+      - UNBOUND_ENABLED=false
+      # - UNBOUND_NAMESERVERS
+      # --- Basic --- #
       - PUID=666
       - PGID=321
       - UMASK=002
+      - TZ=Etc/UTC
+      - WEBUI_PORTS=8096/tcp
     restart: unless-stopped
     labels:
       # traefik
