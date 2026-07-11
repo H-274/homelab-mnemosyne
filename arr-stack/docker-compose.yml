@@ -302,7 +302,7 @@ services:
       # glance
       glance.category: media
       glance.name: Prowlarr
-      glance.icon: di:prowarr
+      glance.icon: di:prowlarr
       glance.url: https://prowlarr.mnemosyne.lan:81
       glance.description: Indexer aggregation
 
