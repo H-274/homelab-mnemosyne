@@ -168,6 +168,12 @@ services:
       # arcane
       com.getarcaneapp.arcane.icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/radarr.svg
 
+      # glance
+      glance.name: Radarr EN
+      glance.icon: si:radarr
+      glance.url: https://radarr.mnemosyne.lan:81/en
+      glance.description: English movies acquisition
+
   radarr-fr:
     container_name: radarr-fr
     image: ghcr.io/hotio/radarr
@@ -213,8 +219,15 @@ services:
       traefik.http.services.radarr-fr.loadbalancer.server.port: 7878
       traefik.http.routers.radarr-fr.entrypoints: web
       traefik.http.routers.radarr-fr.tls: true
+
       # arcane
       com.getarcaneapp.arcane.icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/radarr.svg
+
+      # glance
+      glance.name: Radarr FR
+      glance.icon: si:radarr
+      glance.url: https://radarr.mnemosyne.lan:81/fr
+      glance.description: French movies acquisition
 
   prowlarr:
     container_name: prowlarr
