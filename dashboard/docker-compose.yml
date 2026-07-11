@@ -11,6 +11,8 @@ services:
     hostname: glance.internal
     image: glanceapp/glance
     restart: unless-stopped
+    environment:
+      - JELLYFIN_API_KEY
     volumes:
       - /glance/config:/app/config
       - /glance/assets:/app/assets
