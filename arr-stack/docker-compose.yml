@@ -63,6 +63,15 @@ services:
       # arcane
       com.getarcaneapp.arcane.icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/sonarr.svg
 
+      # glance
+      glance.parent: sonarr
+      glance.category: media
+      glance.name: Sonarr EN
+      glance.icon: si:sonarr
+      glance.url: https://sonarr.mnemosyne.lan:81/en
+      glance.description: English show acquisition
+      glance.hide: false
+
   sonarr-fr:
     container_name: sonarr-fr
     image: ghcr.io/hotio/sonarr
@@ -108,8 +117,18 @@ services:
       traefik.http.services.sonarr-fr.loadbalancer.server.port: 8989
       traefik.http.routers.sonarr-fr.entrypoints: web
       traefik.http.routers.sonarr-fr.tls: true
+
       # arcane
       com.getarcaneapp.arcane.icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/sonarr.svg
+
+      # glance
+      glance.parent: sonarr
+      glance.category: media
+      glance.name: Sonarr FR
+      glance.icon: si:sonarr
+      glance.url: https://sonarr.mnemosyne.lan:81/fr
+      glance.description: French show acquisition
+      glance.hide: false
 
   radarr-en:
     container_name: radarr-en
@@ -170,10 +189,12 @@ services:
 
       # glance
       glance.parent: radarr
+      glance.category: media
       glance.name: Radarr EN
       glance.icon: si:radarr
       glance.url: https://radarr.mnemosyne.lan:81/en
       glance.description: English movies acquisition
+      glance.hide: false
 
   radarr-fr:
     container_name: radarr-fr
@@ -226,10 +247,12 @@ services:
 
       # glance
       glance.parent: radarr
+      glance.category: media
       glance.name: Radarr FR
       glance.icon: si:radarr
       glance.url: https://radarr.mnemosyne.lan:81/fr
       glance.description: French movies acquisition
+      glance.hide: false
 
   prowlarr:
     container_name: prowlarr
