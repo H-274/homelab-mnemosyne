@@ -53,12 +53,12 @@ services:
       traefik.http.routers.sonarr-en.tls: true
 
       # fallback traefik
-      traefik.http.routers.sonarr.rule: Host(`sonarr.mnemosyne.lan`) && PathPrefix(`/`)
-      traefik.http.routers.sonarr.middlewares: default-locale
-      traefik.http.routers.sonarr.priority: 1
-      traefik.http.routers.sonarr.entrypoints: web
-      traefik.http.routers.sonarr.tls: true
-      traefik.http.routers.services: sonarr-en
+      #traefik.http.routers.sonarr.rule: Host(`sonarr.mnemosyne.lan`) && PathPrefix(`/`)
+      #traefik.http.routers.sonarr.middlewares: default-locale
+      #traefik.http.routers.sonarr.priority: 1
+      #traefik.http.routers.sonarr.entrypoints: web
+      #traefik.http.routers.sonarr.tls: true
+      #traefik.http.routers.services: sonarr-en
 
       # arcane
       com.getarcaneapp.arcane.icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/sonarr.svg
@@ -175,12 +175,12 @@ services:
       traefik.http.services.radarr-en.loadbalancer.server.port: 7878
 
       # fallback traefik
-      traefik.http.routers.radarr.rule: Host(`radarr.mnemosyne.lan`) && PathPrefix(`/`)
-      traefik.http.routers.radarr.middlewares: default-locale
-      traefik.http.routers.radarr.priority: 1
-      traefik.http.routers.radarr.entrypoints: web
-      traefik.http.routers.radarr.tls: true
-      traefik.http.routers.services: radarr-en
+      #traefik.http.routers.radarr.rule: Host(`radarr.mnemosyne.lan`) && PathPrefix(`/`)
+      #traefik.http.routers.radarr.middlewares: default-locale
+      #traefik.http.routers.radarr.priority: 1
+      #traefik.http.routers.radarr.entrypoints: web
+      #traefik.http.routers.radarr.tls: true
+      #traefik.http.routers.services: radarr-en
 
       # arcane
       com.getarcaneapp.arcane.icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/radarr.svg
