@@ -67,7 +67,7 @@ services:
       glance.id: sonarr
       glance.category: media
       glance.name: Sonarr EN
-      glance.icon: si:sonarr
+      glance.icon: di:sonarr
       glance.url: https://sonarr.mnemosyne.lan:81/en
       glance.description: English show acquisition
 
@@ -124,7 +124,7 @@ services:
       glance.parent: sonarr
       glance.category: media
       glance.name: Sonarr FR
-      glance.icon: si:sonarr
+      glance.icon: di:sonarr
       glance.url: https://sonarr.mnemosyne.lan:81/fr
       glance.description: French show acquisition
 
@@ -189,7 +189,7 @@ services:
       glance.id: radarr
       glance.category: media
       glance.name: Radarr EN
-      glance.icon: si:radarr
+      glance.icon: di:radarr
       glance.url: https://radarr.mnemosyne.lan:81/en
       glance.description: English movies acquisition
 
@@ -246,7 +246,7 @@ services:
       glance.parent: radarr
       glance.category: media
       glance.name: Radarr FR
-      glance.icon: si:radarr
+      glance.icon: di:radarr
       glance.url: https://radarr.mnemosyne.lan:81/fr
       glance.description: French movies acquisition
 
@@ -302,7 +302,7 @@ services:
       # glance
       glance.category: media
       glance.name: Prowlarr
-      glance.icon: si:prowarr
+      glance.icon: di:prowarr
       glance.url: https://prowlarr.mnemosyne.lan:81
       glance.description: Indexer aggregation
 
@@ -360,7 +360,7 @@ services:
       # glance
       glance.category: other
       glance.name: qBittorrent
-      glance.icon: si:qbittorrent
+      glance.icon: di:qbittorrent
       glance.url: https://qbittorrent.mnemosyne.lan:81/
       glance.description: Torrent file download
 
@@ -416,7 +416,7 @@ services:
       # glance
       glance.category: other
       glance.name: SABnzbd
-      glance.icon: si:sabnzbd
+      glance.icon: di:sabnzbd
       glance.url: https://sabnzbd.mnemosyne.lan:81/
       glance.description: Usenet file download
 
@@ -474,7 +474,7 @@ services:
       # glance
       glance.category: media
       glance.name: Jellyfin
-      glance.icon: si:jellyfin
+      glance.icon: di:jellyfin
       glance.url: https://jellyfin.mnemosyne.lan:81/
       glance.description: Media sharing
 
@@ -496,7 +496,7 @@ services:
       # glance
       glance.category: other
       glance.name: Flaresolverr
-      glance.icon: si:flaresolverr
+      glance.icon: di:flaresolverr
       glance.description: Cloudflare challenge solver
 
 networks:
