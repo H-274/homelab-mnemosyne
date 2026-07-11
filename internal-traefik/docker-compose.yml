@@ -61,6 +61,13 @@ services:
       # Basic‑auth middleware
       # - "traefik.http.middlewares.dashboard-auth.basicauth.users=<PASTE_HASH_HERE>"
       # - "traefik.http.routers.dashboard.middlewares=dashboard-auth@docker"
+
+      # glance
+      glance.category: other
+      glance.name: Traefik
+      glance.icon: di:traefik
+      glance.url: https://dashboard.mnemosyne.lan:81
+      glance.description: Local Reverse Proxy
     ports:
       - "81:80"
       - "444:443"

@@ -30,6 +30,13 @@ services:
       # arcane
       com.getarcaneapp.arcane.icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/glance.svg
 
+      # glance
+      glance.category: other
+      glance.name: Glance
+      glance.icon: di:glance
+      glance.url: https://glance.mnemosyne.lan:81/
+      glance.description: Pretty dashboard
+
 networks:
   exposed-internal:
     external: true

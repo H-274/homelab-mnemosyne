@@ -16,6 +16,12 @@ services:
       - NEWT_SECRET
     networks:
       - exposed-external
+    labels:
+      # glance
+      glance.category: other
+      glance.name: Newt
+      glance.icon: di:pangolin
+      glance.description: Proxy Tunnel
 
 networks:
   exposed-external:

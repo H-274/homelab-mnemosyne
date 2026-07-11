@@ -23,6 +23,13 @@ services:
       traefik.http.routers.grafana.entrypoints: web
       traefik.http.routers.grafana.tls: true
 
+      # glance
+      glance.category: monitoring
+      glance.name: Grafana
+      glance.icon: di:grafana
+      glance.url: https://grafana.mnemosyne.lan:81
+      glance.description: Monitoring dashboards
+
   prometheus:
     image: prom/prometheus:latest
     container_name: prometheus
@@ -42,6 +49,13 @@ services:
     labels:
       # arcane
       com.getarcaneapp.arcane.icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/prometheus.svg
+
+      # glance
+      glance.category: monitoring
+      glance.name: Prometheus
+      glance.icon: di:prometheus
+      glance.url: https://prometheus.mnemosyne.lan:81
+      glance.description: Monitoring data scraping
 
 networks:
   exposed-internal:
