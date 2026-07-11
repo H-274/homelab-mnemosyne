@@ -64,13 +64,12 @@ services:
       com.getarcaneapp.arcane.icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/sonarr.svg
 
       # glance
-      glance.parent: sonarr
+      glance.id: sonarr
       glance.category: media
       glance.name: Sonarr EN
       glance.icon: si:sonarr
       glance.url: https://sonarr.mnemosyne.lan:81/en
       glance.description: English show acquisition
-      glance.hide: false
 
   sonarr-fr:
     container_name: sonarr-fr
@@ -128,7 +127,6 @@ services:
       glance.icon: si:sonarr
       glance.url: https://sonarr.mnemosyne.lan:81/fr
       glance.description: French show acquisition
-      glance.hide: false
 
   radarr-en:
     container_name: radarr-en
@@ -188,13 +186,12 @@ services:
       com.getarcaneapp.arcane.icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/radarr.svg
 
       # glance
-      glance.parent: radarr
+      glance.id: radarr
       glance.category: media
       glance.name: Radarr EN
       glance.icon: si:radarr
       glance.url: https://radarr.mnemosyne.lan:81/en
       glance.description: English movies acquisition
-      glance.hide: false
 
   radarr-fr:
     container_name: radarr-fr
@@ -252,7 +249,6 @@ services:
       glance.icon: si:radarr
       glance.url: https://radarr.mnemosyne.lan:81/fr
       glance.description: French movies acquisition
-      glance.hide: false
 
   prowlarr:
     container_name: prowlarr
@@ -299,8 +295,16 @@ services:
       traefik.http.services.prowlarr.loadbalancer.server.port: 9696
       traefik.http.routers.prowlarr.entrypoints: web
       traefik.http.routers.prowlarr.tls: true
+
       # arcane
       com.getarcaneapp.arcane.icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/prowlarr.svg
+
+      # glance
+      glance.category: media
+      glance.name: Prowlarr
+      glance.icon: si:prowarr
+      glance.url: https://prowlarr.mnemosyne.lan:81
+      glance.description: Indexer aggregation
 
   qbittorrent:
     container_name: qbittorrent
@@ -349,8 +353,16 @@ services:
       traefik.http.services.qbittorrent.loadbalancer.server.port: 8080
       traefik.http.routers.qbittorrent.entrypoints: web
       traefik.http.routers.qbittorrent.tls: true
+
       # arcane
       com.getarcaneapp.arcane.icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/qbittorrent.svg
+
+      # glance
+      glance.category: other
+      glance.name: qBittorrent
+      glance.icon: si:qbittorrent
+      glance.url: https://qbittorrent.mnemosyne.lan:81/
+      glance.description: Torrent file download
 
   sabnzbd:
     container_name: sabnzbd
@@ -397,8 +409,16 @@ services:
       traefik.http.services.sabnzbd.loadbalancer.server.port: 8080
       traefik.http.routers.sabnzbd.entrypoints: web
       traefik.http.routers.sabnzbd.tls: true
+
       # arcane
       com.getarcaneapp.arcane.icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/sabnzbd.svg
+
+      # glance
+      glance.category: other
+      glance.name: SABnzbd
+      glance.icon: si:sabnzbd
+      glance.url: https://sabnzbd.mnemosyne.lan:81/
+      glance.description: Usenet file download
 
   jellyfin:
     container_name: jellyfin
@@ -447,8 +467,16 @@ services:
       traefik.http.routers.jellyfin.entrypoints: web
       traefik.http.routers.jellyfin.tls: true
       traefik.http.services.jellyfin.loadbalancer.server.port: 8096
+
       # arcane
       com.getarcaneapp.arcane.icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/jellyfin.svg
+
+      # glance
+      glance.category: media
+      glance.name: Jellyfin
+      glance.icon: si:jellyfin
+      glance.url: https://jellyfin.mnemosyne.lan:81/
+      glance.description: Media sharing
 
   flaresolverr:
     container_name: flaresolverr
@@ -464,6 +492,12 @@ services:
     labels:
       # arcane
       com.getarcaneapp.arcane.icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/flaresolverr.svg
+
+      # glance
+      glance.category: other
+      glance.name: Flaresolverr
+      glance.icon: si:flaresolverr
+      glance.description: Cloudflare challenge solver
 
 networks:
   exposed-internal:
