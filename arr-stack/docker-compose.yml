@@ -358,7 +358,7 @@ services:
       com.getarcaneapp.arcane.icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/qbittorrent.svg
 
       # glance
-      glance.category: other
+      glance.category: media
       glance.name: qBittorrent
       glance.icon: di:qbittorrent
       glance.url: https://qbittorrent.mnemosyne.lan:81/
@@ -414,7 +414,7 @@ services:
       com.getarcaneapp.arcane.icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/sabnzbd.svg
 
       # glance
-      glance.category: other
+      glance.category: media
       glance.name: SABnzbd
       glance.icon: di:sabnzbd
       glance.url: https://sabnzbd.mnemosyne.lan:81/
