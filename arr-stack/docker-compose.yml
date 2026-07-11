@@ -169,6 +169,7 @@ services:
       com.getarcaneapp.arcane.icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/radarr.svg
 
       # glance
+      glance.parent: radarr
       glance.name: Radarr EN
       glance.icon: si:radarr
       glance.url: https://radarr.mnemosyne.lan:81/en
@@ -224,6 +225,7 @@ services:
       com.getarcaneapp.arcane.icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/radarr.svg
 
       # glance
+      glance.parent: radarr
       glance.name: Radarr FR
       glance.icon: si:radarr
       glance.url: https://radarr.mnemosyne.lan:81/fr
