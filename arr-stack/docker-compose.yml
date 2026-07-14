@@ -311,7 +311,7 @@ services:
     container_name: profilarr
     hostname: profilarr.internal
     volumes:
-      - /volumes/profilarr/config:/config
+      - /volumes/arr-stack/config/profilarr:/config
     environment:
       - PUID=555
       - PGID=321
