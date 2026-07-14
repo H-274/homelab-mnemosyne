@@ -306,6 +306,28 @@ services:
       glance.url: https://prowlarr.mnemosyne.lan:81
       glance.description: Indexer aggregation
 
+  clonarr:
+    image: ghcr.io/prophetse7en/clonarr:latest
+    container_name: clonarr
+    hostname: clonarr.internal
+    restart: unless-stopped
+    environment:
+      - TZ=America/New-York
+      #- PUID=99
+      #- PGID=100
+    volumes:
+      #- ./clonarr-config:/config
+    labels:
+      # traefik
+      traefik.enable: true
+      traefik.http.routers.prowlarr.rule: Host(`clonarr.mnemosyne.lan`)
+      traefik.http.services.prowlarr.loadbalancer.server.port: 6060
+      traefik.http.routers.prowlarr.entrypoints: web
+      traefik.http.routers.prowlarr.tls: true
+
+      # arcane
+      com.getarcaneapp.arcane.icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/clonarr.svg
+
   qbittorrent:
     container_name: qbittorrent
     image: ghcr.io/hotio/qbittorrent
