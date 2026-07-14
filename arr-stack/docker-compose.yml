@@ -306,34 +306,33 @@ services:
       glance.url: https://prowlarr.mnemosyne.lan:81
       glance.description: Indexer aggregation
 
-  clonarr:
-    image: ghcr.io/prophetse7en/clonarr:latest
-    container_name: clonarr
-    hostname: clonarr.internal
-    restart: unless-stopped
-    environment:
-      # --- Basic --- #
-      - TZ=Etc/UTC
-      #- PUID=99
-      #- PGID=100
+  profilarr:
+    image: ghcr.io/dictionarry-hub/profilarr:latest
+    container_name: profilarr
+    hostname: profilarr.internal
     volumes:
-      - /volumes/arr-stack/clonarr/config:/config
+      - /volumes/profilarr/config:/config
+    environment:
+      - PUID=555
+      - PGID=321
+      - TZ=Etc/UTC
+      - ORIGIN=https://profilarr.mnemosyne.lan:81
     labels:
       # traefik
       traefik.enable: true
-      traefik.http.routers.clonarr.rule: Host(`clonarr.mnemosyne.lan`)
-      traefik.http.services.clonarr.loadbalancer.server.port: 6060
-      traefik.http.routers.clonarr.entrypoints: web
-      traefik.http.routers.clonarr.tls: true
+      traefik.http.routers.profilarr.rule: Host(`profilarr.mnemosyne.lan`)
+      traefik.http.services.profilarr.loadbalancer.server.port: 6868
+      traefik.http.routers.profilarr.entrypoints: web
+      traefik.http.routers.profilarr.tls: true
 
       # arcane
-      com.getarcaneapp.arcane.icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/clonarr.svg
+      com.getarcaneapp.arcane.icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/profilarr.svg
 
       # glance
       glance.category: media
-      glance.name: Clonarr
-      glance.icon: di:clonarr
-      glance.url: https://clonarr.mnemosyne.lan:81
+      glance.name: Profilarr
+      glance.icon: di:profilarr
+      glance.url: https://profilarr.mnemosyne.lan:81
       glance.description: Download profile manager
 
   qbittorrent:
