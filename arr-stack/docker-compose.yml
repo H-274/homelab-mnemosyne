@@ -394,61 +394,61 @@ services:
       glance.url: https://qbittorrent.mnemosyne.lan:81/
       glance.description: Torrent file download
 
-  sabnzbd:
-    container_name: sabnzbd
-    image: ghcr.io/hotio/sabnzbd
-    hostname: sabnzbd.internal
-    cap_add:
-      - NET_ADMIN
-    volumes:
-      - /arr-stack/config/sabnzbd:/config
-      - /arr-stack/data/usenet:/data/usenet
-    networks:
-      - exposed-internal
-    environment:
-      - VPN_ENABLED=true
-      - VPN_CONF=wg0
-      - VPN_PROVIDER=pia
-      - VPN_LAN_NETWORK=192.168.1.0/24
-      - VPN_LAN_LEAK_ENABLED=false
-      # - VPN_EXPOSE_PORTS_ON_LAN
-      - VPN_AUTO_PORT_FORWARD=true
-      # - VPN_PORT_REDIRECTS
-      - VPN_HEALTHCHECK_ENABLED=false
-      - VPN_NAMESERVERS
-      # - VPN_INTERFACE_PREFIXES
-      - VPN_PIA_USER
-      - VPN_PIA_PASS
-      # - VPN_PIA_PREFERRED_REGION
-      # - VPN_PIA_DIP_TOKEN
-      - VPN_PIA_PORT_FORWARD_PERSIST=false
-      - PRIVOXY_ENABLED=true
-      - UNBOUND_ENABLED=false
-      # - UNBOUND_NAMESERVERS
-      # --- Basic --- #
-      - PUID=555
-      - PGID=321
-      - UMASK=002
-      - TZ=Etc/UTC
-      - WEBUI_PORTS=8080/tcp
-    restart: unless-stopped
-    labels:
-      # traefik
-      traefik.enable: true
-      traefik.http.routers.sabnzbd.rule: Host(`sabnzbd.mnemosyne.lan`)
-      traefik.http.services.sabnzbd.loadbalancer.server.port: 8080
-      traefik.http.routers.sabnzbd.entrypoints: web
-      traefik.http.routers.sabnzbd.tls: true
+  #sabnzbd:
+  #  container_name: sabnzbd
+  #  image: ghcr.io/hotio/sabnzbd
+  #  hostname: sabnzbd.internal
+  #  cap_add:
+  #    - NET_ADMIN
+  #  volumes:
+  #    - /arr-stack/config/sabnzbd:/config
+  #    - /arr-stack/data/usenet:/data/usenet
+  #  networks:
+  #    - exposed-internal
+  #  environment:
+  #    - VPN_ENABLED=true
+  #    - VPN_CONF=wg0
+  #    - VPN_PROVIDER=pia
+  #    - VPN_LAN_NETWORK=192.168.1.0/24
+  #    - VPN_LAN_LEAK_ENABLED=false
+  #    # - VPN_EXPOSE_PORTS_ON_LAN
+  #    - VPN_AUTO_PORT_FORWARD=true
+  #    # - VPN_PORT_REDIRECTS
+  #    - VPN_HEALTHCHECK_ENABLED=false
+  #    - VPN_NAMESERVERS
+  #    # - VPN_INTERFACE_PREFIXES
+  #    - VPN_PIA_USER
+  #    - VPN_PIA_PASS
+  #    # - VPN_PIA_PREFERRED_REGION
+  #    # - VPN_PIA_DIP_TOKEN
+  #    - VPN_PIA_PORT_FORWARD_PERSIST=false
+  #    - PRIVOXY_ENABLED=true
+  #    - UNBOUND_ENABLED=false
+  #    # - UNBOUND_NAMESERVERS
+  #    # --- Basic --- #
+  #    - PUID=555
+  #    - PGID=321
+  #    - UMASK=002
+  #    - TZ=Etc/UTC
+  #    - WEBUI_PORTS=8080/tcp
+  #  restart: unless-stopped
+  #  labels:
+  #    # traefik
+  #    traefik.enable: true
+  #    traefik.http.routers.sabnzbd.rule: Host(`sabnzbd.mnemosyne.lan`)
+  #    traefik.http.services.sabnzbd.loadbalancer.server.port: 8080
+  #    traefik.http.routers.sabnzbd.entrypoints: web
+  #    traefik.http.routers.sabnzbd.tls: true
 
-      # arcane
-      com.getarcaneapp.arcane.icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/sabnzbd.svg
+  #    # arcane
+  #    com.getarcaneapp.arcane.icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/sabnzbd.svg
 
-      # glance
-      glance.category: media
-      glance.name: SABnzbd
-      glance.icon: di:sabnzbd
-      glance.url: https://sabnzbd.mnemosyne.lan:81/
-      glance.description: Usenet file download
+  #    # glance
+  #    glance.category: media
+  #    glance.name: SABnzbd
+  #    glance.icon: di:sabnzbd
+  #    glance.url: https://sabnzbd.mnemosyne.lan:81/
+  #    glance.description: Usenet file download
 
   jellyfin:
     container_name: jellyfin
