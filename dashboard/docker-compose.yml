@@ -14,8 +14,8 @@ services:
     environment:
       - JELLYFIN_API_KEY
     volumes:
-      - /glance/config:/app/config
-      - /glance/assets:/app/assets
+      - /volumes/dashboard/glance/config:/app/config
+      - /volumes/dashboard/glance/assets:/app/assets
       - /etc/localtime:/etc/localtime:ro
       - /var/run/docker.sock:/var/run/docker.sock:ro
     networks:

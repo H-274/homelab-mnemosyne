@@ -13,8 +13,8 @@ services:
     cap_add:
       - NET_ADMIN
     volumes:
-      - /arr-stack/config/sonarr/en:/config
-      - /arr-stack/data:/data
+      - /volumes/arr-stack/config/sonarr/en:/config
+      - /volumes/arr-stack/data:/data
     networks:
       - exposed-internal
     environment:
@@ -78,8 +78,8 @@ services:
     cap_add:
       - NET_ADMIN
     volumes:
-      - /arr-stack/config/sonarr/fr:/config
-      - /arr-stack/data:/data
+      - /volumes/arr-stack/config/sonarr/fr:/config
+      - /volumes/arr-stack/data:/data
     networks:
       - exposed-internal
     environment:
@@ -135,8 +135,8 @@ services:
     cap_add:
       - NET_ADMIN
     volumes:
-      - /arr-stack/config/radarr/en:/config
-      - /arr-stack/data:/data
+      - /volumes/arr-stack/config/radarr/en:/config
+      - /volumes/arr-stack/data:/data
     networks:
       - exposed-internal
     environment:
@@ -200,8 +200,8 @@ services:
     cap_add:
       - NET_ADMIN
     volumes:
-      - /arr-stack/config/radarr/fr:/config
-      - /arr-stack/data:/data
+      - /volumes/arr-stack/config/radarr/fr:/config
+      - /volumes/arr-stack/data:/data
     networks:
       - exposed-internal
     environment:
@@ -257,8 +257,8 @@ services:
     cap_add:
       - NET_ADMIN
     volumes:
-      - /arr-stack/config/prowlarr:/config
-      - /arr-stack/data:/data
+      - /volumes/arr-stack/config/prowlarr:/config
+      - /volumes/arr-stack/data:/data
     networks:
       - exposed-internal
     environment:
@@ -317,7 +317,7 @@ services:
       #- PUID=99
       #- PGID=100
     volumes:
-      - ./clonarr-config:/config
+      - /volumes/arr-stack/clonarr/config:/config
     labels:
       # traefik
       traefik.enable: true
@@ -343,8 +343,8 @@ services:
     cap_add:
       - NET_ADMIN
     volumes:
-      - /arr-stack/config/qbittorrent:/config
-      - /arr-stack/data/torrents:/data/torrents
+      - /volumes/arr-stack/config/qbittorrent:/config
+      - /volumes/arr-stack/data/torrents:/data/torrents
     networks:
       - exposed-internal
     environment:
@@ -457,8 +457,8 @@ services:
     cap_add:
       - NET_ADMIN
     volumes:
-      - /arr-stack/config/jellyfin:/config
-      - /arr-stack/data/media:/data/media
+      - /volumes/arr-stack/config/jellyfin:/config
+      - /volumes/arr-stack/data/media:/data/media
     networks:
       - exposed-internal
       - exposed-external

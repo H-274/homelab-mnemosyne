@@ -12,7 +12,7 @@ services:
     hostname: grafana.internal
     restart: unless-stopped
     volumes:
-      - /monitoring/grafana:/var/lib/grafana
+      - /volumes/monitoring/grafana:/var/lib/grafana
     networks:
       - exposed-internal
     labels:
@@ -36,8 +36,8 @@ services:
     hostname: prometheus.internal
     restart: unless-stopped
     volumes:
-      - /monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
-      - /monitoring/prometheus:/prometheus
+      - /volumes/monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+      - /volumes/monitoring/prometheus:/prometheus
     command:
       - "--config.file=/etc/prometheus/prometheus.yml"
       - "--storage.tsdb.path=/prometheus"
