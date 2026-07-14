@@ -312,7 +312,8 @@ services:
     hostname: clonarr.internal
     restart: unless-stopped
     environment:
-      - TZ=America/New-York
+      # --- Basic --- #
+      - TZ=Etc/UTC
       #- PUID=99
       #- PGID=100
     volumes:
