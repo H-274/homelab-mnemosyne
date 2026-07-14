@@ -170,7 +170,7 @@ services:
       # traefik
       traefik.enable: true
       traefik.http.routers.radarr-en.rule: Host(`radarr.mnemosyne.lan`) && PathPrefix(`/en`)
-      traefik.http.routers.radarr-en.entrypoints: web
+      traefik.http.routers.radarr-en.entrypoints: websecure
       traefik.http.routers.radarr-en.tls: true
       traefik.http.services.radarr-en.loadbalancer.server.port: 7878
 
