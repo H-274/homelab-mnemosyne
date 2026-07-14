@@ -317,7 +317,7 @@ services:
       #- PUID=99
       #- PGID=100
     volumes:
-      #- ./clonarr-config:/config
+      - ./clonarr-config:/config
     labels:
       # traefik
       traefik.enable: true
