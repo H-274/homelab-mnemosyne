@@ -47,7 +47,7 @@ services:
     labels:
       # traefik
       traefik.enable: true
-      traefik.http.routers.sonarr-en.rule: Host(`sonarr.mnemosyne.lan`) && PathPrefix(`/en`)
+      traefik.http.routers.sonarr-en.rule: Host(`en-sonarr.mnemosyne.lan`) && PathPrefix(`/en`)
       traefik.http.services.sonarr-en.loadbalancer.server.port: 8989
       traefik.http.routers.sonarr-en.entrypoints: web
       traefik.http.routers.sonarr-en.tls: true
@@ -112,7 +112,7 @@ services:
     labels:
       # traefik
       traefik.enable: true
-      traefik.http.routers.sonarr-fr.rule: Host(`sonarr.mnemosyne.lan`) && PathPrefix(`/fr`)
+      traefik.http.routers.sonarr-fr.rule: Host(`fr-sonarr.mnemosyne.lan`) && PathPrefix(`/fr`)
       traefik.http.services.sonarr-fr.loadbalancer.server.port: 8989
       traefik.http.routers.sonarr-fr.entrypoints: web
       traefik.http.routers.sonarr-fr.tls: true
@@ -169,8 +169,8 @@ services:
     labels:
       # traefik
       traefik.enable: true
-      traefik.http.routers.radarr-en.rule: Host(`radarr.mnemosyne.lan`) && PathPrefix(`/en`)
-      traefik.http.routers.radarr-en.entrypoints: websecure
+      traefik.http.routers.radarr-en.rule: Host(`en-radarr.mnemosyne.lan`) #&& PathPrefix(`/en`)
+      traefik.http.routers.radarr-en.entrypoints: web
       traefik.http.routers.radarr-en.tls: true
       traefik.http.services.radarr-en.loadbalancer.server.port: 7878
 
@@ -234,7 +234,7 @@ services:
     labels:
       # traefik
       traefik.enable: true
-      traefik.http.routers.radarr-fr.rule: Host(`radarr.mnemosyne.lan`) && PathPrefix(`/fr`)
+      traefik.http.routers.radarr-fr.rule: Host(`fr-radarr.mnemosyne.lan`) && PathPrefix(`/fr`)
       traefik.http.services.radarr-fr.loadbalancer.server.port: 7878
       traefik.http.routers.radarr-fr.entrypoints: web
       traefik.http.routers.radarr-fr.tls: true
