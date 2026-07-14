@@ -320,13 +320,20 @@ services:
     labels:
       # traefik
       traefik.enable: true
-      traefik.http.routers.prowlarr.rule: Host(`clonarr.mnemosyne.lan`)
-      traefik.http.services.prowlarr.loadbalancer.server.port: 6060
-      traefik.http.routers.prowlarr.entrypoints: web
-      traefik.http.routers.prowlarr.tls: true
+      traefik.http.routers.clonarr.rule: Host(`clonarr.mnemosyne.lan`)
+      traefik.http.services.clonarr.loadbalancer.server.port: 6060
+      traefik.http.routers.clonarr.entrypoints: web
+      traefik.http.routers.clonarr.tls: true
 
       # arcane
       com.getarcaneapp.arcane.icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/clonarr.svg
+
+      # glance
+      glance.category: media
+      glance.name: Clonarr
+      glance.icon: di:clonarr
+      glance.url: https://clonarr.mnemosyne.lan:81
+      glance.description: Download profile manager
 
   qbittorrent:
     container_name: qbittorrent
