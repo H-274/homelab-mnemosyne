@@ -112,7 +112,7 @@ services:
     labels:
       # traefik
       traefik.enable: true
-      traefik.http.routers.sonarr-fr.rule: Host(`sonarr.mnemosyne.lan`) && PathPrefix(`/fr`)
+      traefik.http.routers.sonarr-fr.rule: Host(`sonarr-fr.mnemosyne.lan`) #&& PathPrefix(`/fr`)
       traefik.http.services.sonarr-fr.loadbalancer.server.port: 8989
       traefik.http.routers.sonarr-fr.entrypoints: web
       traefik.http.routers.sonarr-fr.tls: true
