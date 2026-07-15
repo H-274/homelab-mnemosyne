@@ -317,6 +317,8 @@ services:
       - PGID=321
       - TZ=Etc/UTC
       - ORIGIN=https://profilarr.mnemosyne.lan:81
+    networks:
+      - exposed-internal
     labels:
       # traefik
       traefik.enable: true
