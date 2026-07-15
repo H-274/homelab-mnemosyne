@@ -14,7 +14,7 @@ services:
       - NET_ADMIN
     volumes:
       - /volumes/arr-stack/config/sonarr/en:/config
-      - /volumes/arr-stack/data:/data
+      - /volumes/media:/media
     networks:
       - exposed-internal
     environment:
@@ -79,7 +79,7 @@ services:
       - NET_ADMIN
     volumes:
       - /volumes/arr-stack/config/sonarr/fr:/config
-      - /volumes/arr-stack/data:/data
+      - /volumes/media:/media
     networks:
       - exposed-internal
     environment:
@@ -136,7 +136,7 @@ services:
       - NET_ADMIN
     volumes:
       - /volumes/arr-stack/config/radarr/en:/config
-      - /volumes/arr-stack/data:/data
+      - /volumes/media:/media
     networks:
       - exposed-internal
     environment:
@@ -201,7 +201,7 @@ services:
       - NET_ADMIN
     volumes:
       - /volumes/arr-stack/config/radarr/fr:/config
-      - /volumes/arr-stack/data:/data
+      - /volumes/media:/media
     networks:
       - exposed-internal
     environment:
@@ -344,6 +344,7 @@ services:
     volumes:
       - /volumes/arr-stack/config/qbittorrent:/config
       - /volumes/arr-stack/data/torrents:/data/torrents
+      - /volumes/media:/media
     networks:
       - exposed-internal
     environment:
@@ -457,7 +458,7 @@ services:
       - NET_ADMIN
     volumes:
       - /volumes/arr-stack/config/jellyfin:/config
-      - /volumes/arr-stack/data/media:/data/media
+      - /volumes/media:/media
     networks:
       - exposed-internal
       - exposed-external
