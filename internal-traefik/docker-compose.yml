@@ -72,8 +72,8 @@ services:
       glance.url: https://dashboard.mnemosyne.lan:81
       glance.description: Local Reverse Proxy
     ports:
-      - "81:80"
-      - "444:443"
+      - "80:80"
+      - "443:443"
     volumes:
       - /volumes/proxy:/proxy
       - /var/run/docker.sock:/var/run/docker.sock
