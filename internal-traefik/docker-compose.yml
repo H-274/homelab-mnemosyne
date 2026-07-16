@@ -13,6 +13,9 @@ services:
     restart: unless-stopped
     security_opt:
       - no-new-privileges:true
+    environment:
+      - CF_API_EMAIL
+      - CF_DNS_API_TOKEN
     command:
       # EntryPoints
       - "--entrypoints.web.address=:80"
@@ -23,7 +26,7 @@ services:
       - "--entrypoints.websecure.http.tls=true"
 
       # Attach the static configuration tls.yaml file that contains the tls configuration settings
-      # - "--providers.file.filename=/dynamic/tls.yaml"
+      - "--providers.file.filename=/proxy/traefik/tls.yaml"
 
       # Providers
       - "--providers.docker=true"
@@ -72,6 +75,7 @@ services:
       - "81:80"
       - "444:443"
     volumes:
+      - /volumes/proxy:/proxy
       - /var/run/docker.sock:/var/run/docker.sock
     networks:
       - exposed-internal
