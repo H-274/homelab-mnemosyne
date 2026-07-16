@@ -49,14 +49,14 @@ services:
       traefik.enable: true
       traefik.http.routers.sonarr-en.rule: Host(`sonarr.mnemosyne.lan`) && PathPrefix(`/en`)
       traefik.http.services.sonarr-en.loadbalancer.server.port: 8989
-      traefik.http.routers.sonarr-en.entrypoints: web
+      traefik.http.routers.sonarr-en.entrypoints: websecure
       traefik.http.routers.sonarr-en.tls: true
 
       # fallback traefik
       traefik.http.routers.sonarr.rule: Host(`sonarr.mnemosyne.lan`) && PathPrefix(`/`)
       traefik.http.routers.sonarr.middlewares: default-locale
       traefik.http.routers.sonarr.priority: 1
-      traefik.http.routers.sonarr.entrypoints: web
+      traefik.http.routers.sonarr.entrypoints: websecure
       traefik.http.routers.sonarr.tls: true
       traefik.http.routers.sonarr.service: sonarr-en
 
@@ -114,7 +114,7 @@ services:
       traefik.enable: true
       traefik.http.routers.sonarr-fr.rule: Host(`sonarr.mnemosyne.lan`) && PathPrefix(`/fr`)
       traefik.http.services.sonarr-fr.loadbalancer.server.port: 8989
-      traefik.http.routers.sonarr-fr.entrypoints: web
+      traefik.http.routers.sonarr-fr.entrypoints: websecure
       traefik.http.routers.sonarr-fr.tls: true
 
       # arcane
@@ -170,7 +170,7 @@ services:
       # traefik
       traefik.enable: true
       traefik.http.routers.radarr-en.rule: Host(`radarr.mnemosyne.lan`) && PathPrefix(`/en`)
-      traefik.http.routers.radarr-en.entrypoints: web
+      traefik.http.routers.radarr-en.entrypoints: websecure
       traefik.http.routers.radarr-en.tls: true
       traefik.http.services.radarr-en.loadbalancer.server.port: 7878
 
@@ -178,7 +178,7 @@ services:
       traefik.http.routers.radarr.rule: Host(`radarr.mnemosyne.lan`) && PathPrefix(`/`)
       traefik.http.routers.radarr.middlewares: default-locale
       traefik.http.routers.radarr.priority: 1
-      traefik.http.routers.radarr.entrypoints: web
+      traefik.http.routers.radarr.entrypoints: websecure
       traefik.http.routers.radarr.tls: true
       traefik.http.routers.radarr.service: radarr-en
 
@@ -236,7 +236,7 @@ services:
       traefik.enable: true
       traefik.http.routers.radarr-fr.rule: Host(`radarr.mnemosyne.lan`) && PathPrefix(`/fr`)
       traefik.http.services.radarr-fr.loadbalancer.server.port: 7878
-      traefik.http.routers.radarr-fr.entrypoints: web
+      traefik.http.routers.radarr-fr.entrypoints: websecure
       traefik.http.routers.radarr-fr.tls: true
 
       # arcane
@@ -293,7 +293,7 @@ services:
       traefik.enable: true
       traefik.http.routers.prowlarr.rule: Host(`prowlarr.mnemosyne.lan`)
       traefik.http.services.prowlarr.loadbalancer.server.port: 9696
-      traefik.http.routers.prowlarr.entrypoints: web
+      traefik.http.routers.prowlarr.entrypoints: websecure
       traefik.http.routers.prowlarr.tls: true
 
       # arcane
@@ -324,7 +324,7 @@ services:
       traefik.enable: true
       traefik.http.routers.profilarr.rule: Host(`profilarr.mnemosyne.lan`)
       traefik.http.services.profilarr.loadbalancer.server.port: 6868
-      traefik.http.routers.profilarr.entrypoints: web
+      traefik.http.routers.profilarr.entrypoints: websecure
       traefik.http.routers.profilarr.tls: true
 
       # arcane
@@ -383,7 +383,7 @@ services:
       traefik.http.routers.qbittorrent.rule: Host(`qbittorrent.mnemosyne.lan`)
       traefik.http.services.qbittorrent.loadbalancer.passhostheader: true
       traefik.http.services.qbittorrent.loadbalancer.server.port: 8080
-      traefik.http.routers.qbittorrent.entrypoints: web
+      traefik.http.routers.qbittorrent.entrypoints: websecure
       traefik.http.routers.qbittorrent.tls: true
 
       # arcane
@@ -439,7 +439,7 @@ services:
   #    traefik.enable: true
   #    traefik.http.routers.sabnzbd.rule: Host(`sabnzbd.mnemosyne.lan`)
   #    traefik.http.services.sabnzbd.loadbalancer.server.port: 8080
-  #    traefik.http.routers.sabnzbd.entrypoints: web
+  #    traefik.http.routers.sabnzbd.entrypoints: websecure
   #    traefik.http.routers.sabnzbd.tls: true
 
   #    # arcane
@@ -496,7 +496,7 @@ services:
       traefik.enable: true
       traefik.docker.network: exposed-internal
       traefik.http.routers.jellyfin.rule: Host(`jellyfin.mnemosyne.lan`)
-      traefik.http.routers.jellyfin.entrypoints: web
+      traefik.http.routers.jellyfin.entrypoints: websecure
       traefik.http.routers.jellyfin.tls: true
       traefik.http.services.jellyfin.loadbalancer.server.port: 8096
 
