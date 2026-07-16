@@ -25,7 +25,7 @@ services:
       traefik.enable: true
       traefik.docker.network: exposed-internal
       traefik.http.routers.glance.rule: Host(`glance.mnemosyne.lan`)
-      traefik.http.routers.glance.entrypoints: websec;ure
+      traefik.http.routers.glance.entrypoints: websecure
       traefik.http.routers.glance.tls: true
       traefik.http.services.glance.loadbalancer.server.port: 8080
 
