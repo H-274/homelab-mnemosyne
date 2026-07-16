@@ -58,7 +58,7 @@ services:
       traefik.http.routers.sonarr.priority: 1
       traefik.http.routers.sonarr.entrypoints: web
       traefik.http.routers.sonarr.tls: true
-      traefik.http.routers.sonarr.services: sonarr-en
+      traefik.http.routers.sonarr.service: sonarr-en
 
       # arcane
       com.getarcaneapp.arcane.icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/sonarr.svg
@@ -180,7 +180,7 @@ services:
       traefik.http.routers.radarr.priority: 1
       traefik.http.routers.radarr.entrypoints: web
       traefik.http.routers.radarr.tls: true
-      traefik.http.routers.radarr.services: radarr-en
+      traefik.http.routers.radarr.service: radarr-en
 
       # arcane
       com.getarcaneapp.arcane.icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/radarr.svg
