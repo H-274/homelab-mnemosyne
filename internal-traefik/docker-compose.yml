@@ -16,38 +16,7 @@ services:
     environment:
       - CF_DNS_API_TOKEN
     command:
-      # EntryPoints
-      - "--entrypoints.web.address=:80"
-      - "--entrypoints.web.http.redirections.entrypoint.to=websecure"
-      - "--entrypoints.web.http.redirections.entrypoint.scheme=https"
-      - "--entrypoints.web.http.redirections.entrypoint.permanent=true"
-      - "--entrypoints.websecure.address=:443"
-      - "--entrypoints.websecure.http.tls=true"
-
-      # Attach the static configuration file
       - "--configFile=/proxy/traefik/config.yaml"
-
-      # Providers
-      - "--providers.docker=true"
-      - "--providers.docker.exposedbydefault=false"
-      - "--providers.docker.network=exposed-internal"
-
-      # API & Dashboard
-      - "--api.dashboard=true"
-      - "--api.insecure=false"
-
-      # Observability
-      - "--log.level=INFO"
-      - "--accesslog=true"
-      - "--metrics.prometheus=true"
-      - "--entryPoints.metrics.address=:8082"
-      - "--metrics.prometheus.entryPoint=metrics"
-      - "--metrics.prometheus.addEntryPointsLabels=true"
-      - "--metrics.prometheus.addRoutersLabels=true"
-      - "--metrics.prometheus.addServicesLabels=true"
-      - "--log.level=DEBUG"
-
-    # Traefik Dynamic configuration via Docker labels
     labels:
       # Enable self‑routing
       traefik.enable: true
