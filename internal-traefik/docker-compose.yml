@@ -14,7 +14,6 @@ services:
     security_opt:
       - no-new-privileges:true
     environment:
-      - CF_API_EMAIL
       - CF_DNS_API_TOKEN
     command:
       # EntryPoints
