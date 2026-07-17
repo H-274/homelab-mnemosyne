@@ -25,7 +25,7 @@ services:
       - "--entrypoints.websecure.http.tls=true"
 
       # Attach the static configuration file
-      #- "--configFile=/proxy/traefik/config.yaml"
+      - "--configFile=/proxy/traefik/config.yaml"
 
       # Providers
       - "--providers.docker=true"
