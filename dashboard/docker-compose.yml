@@ -44,3 +44,5 @@ services:
 networks:
   exposed-internal:
     external: true
+  exposed-external:
+    external: true
