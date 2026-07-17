@@ -47,13 +47,14 @@ services:
     labels:
       # traefik
       traefik.enable: true
-      traefik.http.routers.sonarr-en.rule: Host(`sonarr.mnemosyne.lan`) && PathPrefix(`/en`)
+      traefik.http.routers.sonarr-en.rule: Host(`sonarr.jsmarier.dev`) && PathPrefix(`/en`)
       traefik.http.services.sonarr-en.loadbalancer.server.port: 8989
       traefik.http.routers.sonarr-en.entrypoints: websecure
+      traefik.http.routers.sonarr-en.tls.certresolver: cloudflare
       traefik.http.routers.sonarr-en.tls: true
 
       # fallback traefik
-      traefik.http.routers.sonarr.rule: Host(`sonarr.mnemosyne.lan`) && PathPrefix(`/`)
+      traefik.http.routers.sonarr.rule: Host(`sonarr.jsmarier.dev`) && PathPrefix(`/`)
       traefik.http.routers.sonarr.middlewares: default-locale
       traefik.http.routers.sonarr.priority: 1
       traefik.http.routers.sonarr.entrypoints: websecure
@@ -68,7 +69,7 @@ services:
       glance.category: media
       glance.name: Sonarr EN
       glance.icon: di:sonarr
-      glance.url: https://sonarr.mnemosyne.lan:81/en
+      glance.url: https://sonarr.jsmarier.dev/en
       glance.description: English show acquisition
 
   sonarr-fr:
@@ -112,9 +113,10 @@ services:
     labels:
       # traefik
       traefik.enable: true
-      traefik.http.routers.sonarr-fr.rule: Host(`sonarr.mnemosyne.lan`) && PathPrefix(`/fr`)
+      traefik.http.routers.sonarr-fr.rule: Host(`sonarr.jsmarier.dev`) && PathPrefix(`/fr`)
       traefik.http.services.sonarr-fr.loadbalancer.server.port: 8989
       traefik.http.routers.sonarr-fr.entrypoints: websecure
+      traefik.http.routers.sonarr-fr.tls.certresolver: cloudflare
       traefik.http.routers.sonarr-fr.tls: true
 
       # arcane
@@ -125,7 +127,7 @@ services:
       glance.category: media
       glance.name: Sonarr FR
       glance.icon: di:sonarr
-      glance.url: https://sonarr.mnemosyne.lan:81/fr
+      glance.url: https://sonarr.jsmarier.dev/fr
       glance.description: French show acquisition
 
   radarr-en:
@@ -191,7 +193,7 @@ services:
       glance.category: media
       glance.name: Radarr EN
       glance.icon: di:radarr
-      glance.url: https://radarr.mnemosyne.lan:81/en
+      glance.url: https://radarr.jsmarier.dev/en
       glance.description: English movies acquisition
 
   radarr-fr:
@@ -235,10 +237,11 @@ services:
     labels:
       # traefik
       traefik.enable: true
-      traefik.http.routers.radarr-fr.rule: Host(`radarr.mnemosyne.lan`) && PathPrefix(`/fr`)
-      traefik.http.services.radarr-fr.loadbalancer.server.port: 7878
+      traefik.http.routers.radarr-fr.rule: Host(`radarr.jsmarier.dev`) && PathPrefix(`/fr`)
       traefik.http.routers.radarr-fr.entrypoints: websecure
       traefik.http.routers.radarr-fr.tls: true
+      traefik.http.routers.radarr-fr.tls.certresolver: cloudflare
+      traefik.http.services.radarr-fr.loadbalancer.server.port: 7878
 
       # arcane
       com.getarcaneapp.arcane.icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/radarr.svg
@@ -248,7 +251,7 @@ services:
       glance.category: media
       glance.name: Radarr FR
       glance.icon: di:radarr
-      glance.url: https://radarr.mnemosyne.lan:81/fr
+      glance.url: https://radarr.jsmarier.dev/fr
       glance.description: French movies acquisition
 
   prowlarr:
@@ -292,10 +295,11 @@ services:
     labels:
       # traefik
       traefik.enable: true
-      traefik.http.routers.prowlarr.rule: Host(`prowlarr.mnemosyne.lan`)
-      traefik.http.services.prowlarr.loadbalancer.server.port: 9696
+      traefik.http.routers.prowlarr.rule: Host(`prowlarr.jsmarier.dev`)
       traefik.http.routers.prowlarr.entrypoints: websecure
       traefik.http.routers.prowlarr.tls: true
+      traefik.http.routers.prowlarr.tls.certresolver: cloudflare
+      traefik.http.services.prowlarr.loadbalancer.server.port: 9696
 
       # arcane
       com.getarcaneapp.arcane.icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/prowlarr.svg
@@ -304,7 +308,7 @@ services:
       glance.category: media
       glance.name: Prowlarr
       glance.icon: di:prowlarr
-      glance.url: https://prowlarr.mnemosyne.lan:81
+      glance.url: https://prowlarr.jsmarier.dev
       glance.description: Indexer aggregation
 
   profilarr:
@@ -317,16 +321,17 @@ services:
       - PUID=555
       - PGID=321
       - TZ=Etc/UTC
-      - ORIGIN=https://profilarr.mnemosyne.lan:81
+      - ORIGIN=https://profilarr.jsmarier.dev
     networks:
       - exposed-internal
     labels:
       # traefik
       traefik.enable: true
-      traefik.http.routers.profilarr.rule: Host(`profilarr.mnemosyne.lan`)
-      traefik.http.services.profilarr.loadbalancer.server.port: 6868
+      traefik.http.routers.profilarr.rule: Host(`profilarr.jsmarier.dev`)
       traefik.http.routers.profilarr.entrypoints: websecure
       traefik.http.routers.profilarr.tls: true
+      traefik.http.routers.profilarr.tls.certresolver: cloudflare
+      traefik.http.services.profilarr.loadbalancer.server.port: 6868
 
       # arcane
       com.getarcaneapp.arcane.icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/profilarr.svg
@@ -335,7 +340,7 @@ services:
       glance.category: media
       glance.name: Profilarr
       glance.icon: di:profilarr
-      glance.url: https://profilarr.mnemosyne.lan:81
+      glance.url: https://profilarr.jsmarier.dev
       glance.description: Download profile manager
 
   qbittorrent:
@@ -381,11 +386,11 @@ services:
     labels:
       # traefik
       traefik.enable: true
-      traefik.http.routers.qbittorrent.rule: Host(`qbittorrent.mnemosyne.lan`)
-      traefik.http.services.qbittorrent.loadbalancer.passhostheader: true
-      traefik.http.services.qbittorrent.loadbalancer.server.port: 8080
+      traefik.http.routers.qbittorrent.rule: Host(`qbittorrent.jsmarier.dev`)
       traefik.http.routers.qbittorrent.entrypoints: websecure
       traefik.http.routers.qbittorrent.tls: true
+      traefik.http.routers.qbittorrent.tls.certresolver: cloudflare
+      traefik.http.services.qbittorrent.loadbalancer.server.port: 8080
 
       # arcane
       com.getarcaneapp.arcane.icon: https://cdn.jsdelivr.net/gh/selfhst/icons@main/svg/qbittorrent.svg
@@ -394,7 +399,7 @@ services:
       glance.category: media
       glance.name: qBittorrent
       glance.icon: di:qbittorrent
-      glance.url: https://qbittorrent.mnemosyne.lan:81/
+      glance.url: https://qbittorrent.jsmarier.dev/
       glance.description: Torrent file download
 
   #sabnzbd:
@@ -496,9 +501,10 @@ services:
       # traefik
       traefik.enable: true
       traefik.docker.network: exposed-internal
-      traefik.http.routers.jellyfin.rule: Host(`jellyfin.mnemosyne.lan`)
+      traefik.http.routers.jellyfin.rule: Host(`jellyfin.jsmarier.dev`)
       traefik.http.routers.jellyfin.entrypoints: websecure
       traefik.http.routers.jellyfin.tls: true
+      traefik.http.routers.jellyfin.tls.certresolver: cloudflare
       traefik.http.services.jellyfin.loadbalancer.server.port: 8096
 
       # arcane
@@ -508,7 +514,7 @@ services:
       glance.category: media
       glance.name: Jellyfin
       glance.icon: di:jellyfin
-      glance.url: https://jellyfin.mnemosyne.lan:81/
+      glance.url: https://jellyfin.jsmarier.dev/
       glance.description: Media sharing
 
   flaresolverr:
