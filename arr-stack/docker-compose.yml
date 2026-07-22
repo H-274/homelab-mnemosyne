@@ -69,7 +69,7 @@ services:
       glance.category: media
       glance.name: Sonarr EN
       glance.icon: di:sonarr
-      glance.url: https://sonarr.jsmarier.dev/en
+      glance.url: https://sonarr.jsmarier.dev/en/
       glance.description: English show acquisition
 
   sonarr-fr:
@@ -127,7 +127,7 @@ services:
       glance.category: media
       glance.name: Sonarr FR
       glance.icon: di:sonarr
-      glance.url: https://sonarr.jsmarier.dev/fr
+      glance.url: https://sonarr.jsmarier.dev/fr/
       glance.description: French show acquisition
 
   radarr-en:
@@ -193,7 +193,7 @@ services:
       glance.category: media
       glance.name: Radarr EN
       glance.icon: di:radarr
-      glance.url: https://radarr.jsmarier.dev/en
+      glance.url: https://radarr.jsmarier.dev/en/
       glance.description: English movies acquisition
 
   radarr-fr:
@@ -251,7 +251,7 @@ services:
       glance.category: media
       glance.name: Radarr FR
       glance.icon: di:radarr
-      glance.url: https://radarr.jsmarier.dev/fr
+      glance.url: https://radarr.jsmarier.dev/fr/
       glance.description: French movies acquisition
 
   prowlarr:
@@ -308,7 +308,7 @@ services:
       glance.category: media
       glance.name: Prowlarr
       glance.icon: di:prowlarr
-      glance.url: https://prowlarr.jsmarier.dev
+      glance.url: https://prowlarr.jsmarier.dev/
       glance.description: Indexer aggregation
 
   profilarr:
@@ -340,7 +340,7 @@ services:
       glance.category: media
       glance.name: Profilarr
       glance.icon: di:profilarr
-      glance.url: https://profilarr.jsmarier.dev
+      glance.url: https://profilarr.jsmarier.dev/
       glance.description: Download profile manager
 
   qbittorrent:

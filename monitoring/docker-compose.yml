@@ -28,7 +28,7 @@ services:
       glance.category: monitoring
       glance.name: Grafana
       glance.icon: di:grafana
-      glance.url: https://grafana.mnemosyne.lan:81
+      glance.url: https://grafana.jsmarier.dev/
       glance.description: Monitoring dashboards
 
   prometheus:
@@ -55,7 +55,7 @@ services:
       glance.category: monitoring
       glance.name: Prometheus
       glance.icon: di:prometheus
-      glance.url: https://prometheus.mnemosyne.lan:81
+      glance.url: https://prometheus.jsmarier.dev/
       glance.description: Monitoring data scraping
 
 networks:
