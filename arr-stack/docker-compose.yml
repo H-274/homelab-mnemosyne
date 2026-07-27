@@ -497,7 +497,7 @@ services:
       - TZ=Etc/UTC
       - WEBUI_PORTS=8096/tcp
     devices:
-      - /dev/dri/renderD129:/dev/dri/renderD129
+      - /dev/dri/renderD128:/dev/dri/renderD128
     restart: unless-stopped
     labels:
       # traefik
