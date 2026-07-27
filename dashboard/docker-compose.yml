@@ -16,6 +16,7 @@ services:
     volumes:
       - /volumes/dashboard/glance/config:/app/config
       - /volumes/dashboard/glance/assets:/app/assets
+      - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
       - /var/run/docker.sock:/var/run/docker.sock:ro
     networks:
