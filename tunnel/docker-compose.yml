@@ -8,6 +8,7 @@ x-arcane:
 services:
   newt:
     container_name: newt
+    hostname: tunnel.internal
     image: fosrl/newt
     restart: unless-stopped
     environment:
